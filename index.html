@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hammad Asif — Software Developer & QA Automation Engineer</title>
+<meta name="description" content="Hammad Asif — Software Developer and QA Automation Engineer based in Fulda, Germany. Master's student in Global Software Development.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✓</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#EEF1F0;
+    --surface:#FFFFFF;
+    --ink:#1A2421;
+    --muted:#5B6B66;
+    --line:#D3DEDA;
+    --pass:#2E7D5B;
+    --pass-dim:#E4EFE9;
+    --amber:#9C7328;
+    --amber-dim:#F3EBDA;
+    --mono:'IBM Plex Mono', ui-monospace, monospace;
+    --sans:'IBM Plex Sans', system-ui, sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth; scroll-padding-top:24px;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  img{max-width:100%;}
+
+  .wrap{max-width:920px; margin:0 auto; padding:0 24px;}
+
+  /* ---------- Header ---------- */
+  header.site{
+    padding:18px 0;
+    border-bottom:1px solid var(--line);
+    position:sticky; top:0; z-index:10;
+    background:rgba(238,241,240,0.92);
+    backdrop-filter:blur(6px);
+  }
+  header.site .wrap{display:flex; align-items:center; justify-content:space-between; gap:16px;}
+  .brand{font-family:var(--mono); font-weight:600; font-size:15px; letter-spacing:0.2px;}
+  .brand .dot{color:var(--pass);}
+  nav.top{display:flex; gap:22px; font-size:14px;}
+  nav.top a{text-decoration:none; color:var(--muted); border-bottom:1px solid transparent; padding-bottom:2px;}
+  nav.top a:hover{color:var(--ink); border-bottom-color:var(--line);}
+  @media (max-width:640px){ nav.top{display:none;} }
+
+  /* ---------- Hero ---------- */
+  .hero{padding:64px 0 40px;}
+  .hero-grid{display:grid; grid-template-columns:1.3fr 1fr; gap:40px; align-items:start;}
+  @media (max-width:800px){ .hero-grid{grid-template-columns:1fr;} }
+
+  .status-line{
+    font-family:var(--mono); font-size:13px; color:var(--pass);
+    display:flex; align-items:center; gap:8px; margin-bottom:18px; min-height:18px;
+  }
+  .status-line .cursor{opacity:0.6;}
+  h1.name{
+    font-size:clamp(32px, 5vw, 48px);
+    line-height:1.1;
+    margin:0 0 10px;
+    font-weight:700;
+    letter-spacing:-0.5px;
+  }
+  .role{
+    font-size:clamp(17px, 2.4vw, 20px);
+    color:var(--muted);
+    margin:0 0 22px;
+    max-width:46ch;
+  }
+  .pitch{max-width:56ch; margin:0 0 26px; font-size:15.5px;}
+  .links{display:flex; flex-wrap:wrap; gap:10px;}
+  .links a{
+    font-family:var(--mono); font-size:13px;
+    padding:8px 14px; border:1px solid var(--line); border-radius:5px;
+    text-decoration:none; color:var(--ink); background:var(--surface);
+  }
+  .links a.primary{background:var(--ink); color:var(--bg); border-color:var(--ink);}
+  .links a:hover{border-color:var(--pass);}
+
+  /* environment card, styled like a test-report metadata block */
+  .env-card{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:8px;
+    overflow:hidden;
+  }
+  .env-card .env-head{
+    font-family:var(--mono); font-size:11.5px; letter-spacing:0.4px;
+    color:var(--muted); background:var(--bg);
+    padding:10px 16px; border-bottom:1px solid var(--line);
+  }
+  .env-card dl{margin:0; padding:14px 16px;}
+  .env-card .row{display:flex; justify-content:space-between; gap:12px; padding:8px 0; border-bottom:1px dashed var(--line); font-size:14px;}
+  .env-card .row:last-child{border-bottom:none;}
+  .env-card dt{color:var(--muted);}
+  .env-card dd{margin:0; font-family:var(--mono); font-size:13px; text-align:right;}
+  .badge-pass{
+    display:inline-block; font-family:var(--mono); font-size:11px;
+    background:var(--pass-dim); color:var(--pass); border-radius:4px;
+    padding:2px 8px; font-weight:600;
+  }
+
+  /* ---------- Section shell ---------- */
+  section{padding:52px 0;}
+  section + section{border-top:1px solid var(--line);}
+  .section-head{display:flex; align-items:baseline; gap:12px; margin-bottom:28px;}
+  .section-head .tag{font-family:var(--mono); font-size:12px; color:var(--muted);}
+  h2{font-size:22px; margin:0; font-weight:700;}
+
+  /* ---------- About ---------- */
+  .about-text{max-width:68ch; font-size:15.5px;}
+  .about-text p{margin:0 0 14px;}
+
+  /* ---------- Skills ---------- */
+  .skill-groups{display:grid; grid-template-columns:repeat(2,1fr); gap:22px 32px;}
+  @media (max-width:640px){ .skill-groups{grid-template-columns:1fr;} }
+  .skill-group h3{
+    font-size:12px; text-transform:none; color:var(--muted);
+    font-weight:600; margin:0 0 10px; font-family:var(--mono); letter-spacing:0.2px;
+  }
+  .chip-row{display:flex; flex-wrap:wrap; gap:8px;}
+  .chip{
+    font-family:var(--mono); font-size:12.5px;
+    background:var(--surface); border:1px solid var(--line);
+    border-radius:5px; padding:5px 9px;
+    display:inline-flex; align-items:center; gap:5px;
+  }
+  .chip .ok{color:var(--pass); font-weight:700;}
+
+  /* ---------- Experience (test-case styled timeline) ---------- */
+  .tc{
+    display:grid; grid-template-columns:96px 1fr; gap:18px;
+    padding:20px 0; border-top:1px solid var(--line);
+  }
+  .tc:first-of-type{border-top:none;}
+  .tc-id{font-family:var(--mono); font-size:13px; color:var(--muted); padding-top:2px;}
+  .tc-id .n{color:var(--ink); font-weight:600;}
+  .tc-title{display:flex; flex-wrap:wrap; align-items:baseline; gap:10px; margin-bottom:4px;}
+  .tc-title h3{margin:0; font-size:16.5px; font-weight:700;}
+  .tc-meta{font-family:var(--mono); font-size:12px; color:var(--muted);}
+  .tc-body{font-size:14.5px; max-width:64ch;}
+  .tc-body ul{margin:8px 0 10px; padding-left:18px;}
+  .tc-body li{margin-bottom:4px;}
+  .tc-stack{font-family:var(--mono); font-size:11.5px; color:var(--muted); margin-top:8px;}
+
+  /* ---------- Projects ---------- */
+  .projects{display:flex; flex-direction:column; gap:16px;}
+  .project{
+    background:var(--surface); border:1px solid var(--line); border-radius:8px;
+    padding:20px 22px;
+  }
+  .project-top{display:flex; justify-content:space-between; align-items:flex-start; gap:16px; flex-wrap:wrap;}
+  .project h3{margin:0; font-size:17px;}
+  .project .result{font-family:var(--mono); font-size:12px; color:var(--pass); white-space:nowrap;}
+  .project p.desc{font-size:14.5px; margin:8px 0 12px; max-width:66ch;}
+  .project .stack{font-family:var(--mono); font-size:11.5px; color:var(--muted); margin-bottom:14px;}
+  .project-links{display:flex; gap:10px; flex-wrap:wrap;}
+  .project-links a{
+    font-family:var(--mono); font-size:12.5px; text-decoration:none;
+    color:var(--ink); border-bottom:1px solid var(--line); padding-bottom:1px;
+  }
+  .project-links a:hover{border-bottom-color:var(--pass); color:var(--pass);}
+
+  /* ---------- Education ---------- */
+  .edu{display:flex; flex-direction:column; gap:16px;}
+  .edu-item{display:grid; grid-template-columns:150px 1fr; gap:16px; font-size:14.5px;}
+  @media (max-width:640px){ .edu-item{grid-template-columns:1fr; gap:4px;} }
+  .edu-item .when{font-family:var(--mono); font-size:12.5px; color:var(--muted);}
+  .edu-item h3{margin:0 0 2px; font-size:15.5px;}
+  .edu-item .where{color:var(--muted); font-size:13.5px;}
+
+  /* ---------- Contact / footer ---------- */
+  footer{padding:56px 0 64px;}
+  footer .wrap{display:flex; flex-direction:column; gap:18px;}
+  footer h2{margin-bottom:6px;}
+  footer p.lead{color:var(--muted); font-size:14.5px; margin:0 0 6px; max-width:52ch;}
+  .contact-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:10px 24px; margin-top:8px;}
+  @media (max-width:560px){ .contact-grid{grid-template-columns:1fr;} }
+  .contact-grid a, .contact-grid span{font-family:var(--mono); font-size:13.5px; text-decoration:none; color:var(--ink);}
+  .contact-grid a:hover{color:var(--pass);}
+  .foot-note{font-family:var(--mono); font-size:11.5px; color:var(--muted); margin-top:28px;}
+
+  :focus-visible{outline:2px solid var(--pass); outline-offset:2px;}
+  @media (prefers-reduced-motion: reduce){ * { animation-duration:0.001ms !important; transition-duration:0.001ms !important; } }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <div class="brand">hammad<span class="dot">.</span>asif</div>
+    <nav class="top">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="status-line" id="statusLine" aria-live="polite">
+          <span class="badge-pass" style="padding:3px 9px;">OPEN TO WORK</span>
+        </div>
+        <h1 class="name">Hammad Asif</h1>
+        <p class="role">Software Developer & QA Automation Engineer</p>
+        <p class="pitch">I build automated test suites and web applications, and I like finding the bug before the user does. Currently completing a Master's in Global Software Development at Fulda University of Applied Sciences.</p>
+        <div class="links">
+          <a class="primary" href="mailto:hmmd97@gmail.com">Email me</a>
+          <a href="https://github.com/HammadAsif-997" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://linkedin.com/in/hammad-asif-26466a91" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+
+      <div class="env-card">
+        <div class="env-head">ENVIRONMENT</div>
+        <dl>
+          <div class="row"><dt>Location</dt><dd>Fulda, Germany</dd></div>
+          <div class="row"><dt>Status</dt><dd><span class="badge-pass">OPEN TO WORK</span></dd></div>
+          <div class="row"><dt>Seeking</dt><dd>Werkstudent / Vollzeit</dd></div>
+          <div class="row"><dt>Notice</dt><dd>Immediate</dd></div>
+          <div class="row"><dt>Languages</dt><dd>English (C1) · German (B1)</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head"><span class="tag">01</span><h2>About</h2></div>
+      <div class="about-text">
+        <p>I'm a Master's student in Global Software Development at Fulda University of Applied Sciences, and I work both sides of the same problem: <strong>making software and breaking it on purpose</strong>.</p>
+        <p>On the QA side, that's UI automation with <strong>Selenium</strong> and <strong>Playwright</strong>, API testing with <strong>RestAssured</strong> and <strong>Postman</strong>, and load testing with <strong>JMeter</strong> — the different ways an application quietly fails before a user finds it first. On the development side, I build the applications themselves: <strong>React</strong> front ends, <strong>Node.js</strong> and <strong>Spring Boot</strong> back ends, and the occasional Python script that saves an afternoon of manual work.</p>
+        <p>Looking for a <strong>Werkstudent</strong> role or <strong>full-time</strong> position in software development or QA automation — or ideally, one that uses both.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <div class="section-head"><span class="tag">02</span><h2>Skills</h2></div>
+      <div class="skill-groups">
+        <div class="skill-group">
+          <h3>Languages</h3>
+          <div class="chip-row">
+            <span class="chip"><span class="ok">✓</span>JavaScript</span>
+            <span class="chip"><span class="ok">✓</span>TypeScript</span>
+            <span class="chip"><span class="ok">✓</span>Java</span>
+            <span class="chip"><span class="ok">✓</span>Python</span>
+            <span class="chip"><span class="ok">✓</span>PHP</span>
+            <span class="chip"><span class="ok">✓</span>C#</span>
+            <span class="chip"><span class="ok">✓</span>SQL</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Test automation</h3>
+          <div class="chip-row">
+            <span class="chip"><span class="ok">✓</span>Selenium</span>
+            <span class="chip"><span class="ok">✓</span>Playwright</span>
+            <span class="chip"><span class="ok">✓</span>RestAssured</span>
+            <span class="chip"><span class="ok">✓</span>Postman</span>
+            <span class="chip"><span class="ok">✓</span>JMeter</span>
+            <span class="chip"><span class="ok">✓</span>TestNG</span>
+            <span class="chip"><span class="ok">✓</span>Cypress</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Development</h3>
+          <div class="chip-row">
+            <span class="chip"><span class="ok">✓</span>React</span>
+            <span class="chip"><span class="ok">✓</span>Node.js</span>
+            <span class="chip"><span class="ok">✓</span>Spring Boot</span>
+            <span class="chip"><span class="ok">✓</span>Express</span>
+            <span class="chip"><span class="ok">✓</span>REST APIs</span>
+            <span class="chip"><span class="ok">✓</span>MySQL</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Tools &amp; practice</h3>
+          <div class="chip-row">
+            <span class="chip"><span class="ok">✓</span>Git</span>
+            <span class="chip"><span class="ok">✓</span>Docker</span>
+            <span class="chip"><span class="ok">✓</span>Jira</span>
+            <span class="chip"><span class="ok">✓</span>Linux</span>
+            <span class="chip"><span class="ok">✓</span>CI/CD</span>
+            <span class="chip"><span class="ok">✓</span>Agile/Scrum</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <div class="section-head"><span class="tag">03</span><h2>Experience</h2></div>
+
+      <div class="tc">
+        <div class="tc-id">TC<span class="n">1</span></div>
+        <div>
+          <div class="tc-title">
+            <h3>SQA Automation Engineer — VentureDive</h3>
+            <span class="tc-meta">Jan 2023 – Sep 2024</span>
+          </div>
+          <div class="tc-body">
+            <ul>
+              <li>Maintained Selenium UI automation suites, cutting manual regression testing by 40%.</li>
+              <li>Automated REST API tests with RestAssured and Postman to validate backend data and responses.</li>
+              <li>Ran load and performance tests with JMeter, surfacing bottlenecks under peak traffic.</li>
+              <li>Tracked defects in Jira and worked test planning into an Agile team's sprint cycle.</li>
+            </ul>
+            <div class="tc-stack">Postman · JMeter · REST API · JavaScript · RestAssured · Jira · Git</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tc">
+        <div class="tc-id">TC<span class="n">2</span></div>
+        <div>
+          <div class="tc-title">
+            <h3>Junior Developer &amp; Quality Control — Etech Maestro</h3>
+            <span class="tc-meta">2017 – 2018</span>
+          </div>
+          <div class="tc-body">
+            <ul>
+              <li>Ran functional, regression and integration tests on a nationwide ticket-booking platform.</li>
+              <li>Verified backend services and data consistency through Postman API testing and SQL database checks.</li>
+              <li>Wrote test plans and test cases, and tracked bugs through to resolution in Jira.</li>
+            </ul>
+            <div class="tc-stack">Postman · SQL · Jira · Manual &amp; API Testing · Regression Testing</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <div class="section-head"><span class="tag">04</span><h2>Projects</h2></div>
+
+      <div class="projects">
+
+        <div class="project">
+          <div class="project-top">
+            <h3>Swoplet — Fulda University Marketplace</h3>
+            <span class="result">TEAM LEAD</span>
+          </div>
+          <p class="desc">A marketplace restricted to verified Fulda University students and staff, with real-time chat and an AI-powered price-prediction assistant. Led a 6-person team through the full build; wrote the product detail page and its price-prediction integration.</p>
+          <div class="stack">React · Node.js · Express · MySQL · Socket.io · JWT · Flask (ML)</div>
+          <div class="project-links">
+            <a href="https://github.com/HammadAsif-997/Swoplet" target="_blank" rel="noopener">Repository →</a>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="project-top">
+            <h3>Distributed Application — Spring Boot</h3>
+            <span class="result">PASS</span>
+          </div>
+          <p class="desc">A server-rendered e-commerce app built to demonstrate distributed-systems patterns: Facade and Adapter services, an API-key-protected internal catalog endpoint, and live product reviews broadcast over WebSocket.</p>
+          <div class="stack">Java 17 · Spring Boot · Thymeleaf · WebSocket/STOMP · JPA/H2</div>
+          <div class="project-links">
+            <a href="https://github.com/HammadAsif-997/Distributed-Application-Spring-Boot-Java" target="_blank" rel="noopener">Repository →</a>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="project-top">
+            <h3>Advanced REST API Test Framework</h3>
+            <span class="result">13 TESTS · PASS</span>
+          </div>
+          <p class="desc">A data-driven API testing framework covering full CRUD, JSON Schema validation and response comparison against saved baselines, with automatic Extent Report generation on every run.</p>
+          <div class="stack">RestAssured · Java · TestNG · Extent Reports · Java Faker · Apache POI</div>
+          <div class="project-links">
+            <a href="https://github.com/HammadAsif-997/RestAssuredApiTesting" target="_blank" rel="noopener">Repository →</a>
+            <a href="https://hammadasif-997.github.io/RestAssuredApiTesting/reports/Test-Report-2024.08.29.20.46.04.html" target="_blank" rel="noopener">Test report →</a>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="project-top">
+            <h3>Selenium UI Automation Framework</h3>
+            <span class="result">9 SCENARIOS · PASS</span>
+          </div>
+          <p class="desc">End-to-end UI test suite covering login, sorting, cart and multi-currency checkout flows across two e-commerce sites, built with the Page Object Model.</p>
+          <div class="stack">Selenium · Java · TestNG · Maven · POM</div>
+          <div class="project-links">
+            <a href="https://github.com/HammadAsif-997/SeleniumProjectWith-Bdd-Pom-Java" target="_blank" rel="noopener">Repository →</a>
+            <a href="https://hammadasif-997.github.io/SeleniumProjectWith-Bdd-Pom-Java/reports/Test-Report-2024.08.29.23.26.02.html" target="_blank" rel="noopener">Test report →</a>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="project-top">
+            <h3>REST API Test Suite — RestAssured</h3>
+            <span class="result">5 TESTS · PASS</span>
+          </div>
+          <p class="desc">Full CRUD coverage over a public REST API — GET, POST, PUT, PATCH, DELETE — with Hamcrest assertions on status codes and response bodies.</p>
+          <div class="stack">RestAssured · Java · TestNG · Maven</div>
+          <div class="project-links">
+            <a href="https://github.com/HammadAsif-997/RestAssurePractice" target="_blank" rel="noopener">Repository →</a>
+            <a href="https://hammadasif-997.github.io/RestAssurePractice/reports/index.html" target="_blank" rel="noopener">Test report →</a>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="project-top">
+            <h3>Test Blaze — E-Commerce QA Suite</h3>
+            <span class="result">−30% DEFECTS</span>
+          </div>
+          <p class="desc">UI and API test coverage for an e-commerce application's core modules. Combined Selenium and RestAssured for functional coverage, Postman for backend contract checks, and JMeter for load testing under high traffic.</p>
+          <div class="stack">Selenium · RestAssured · Postman · JMeter · TestRail · Jira</div>
+          <div class="project-links">
+            <span style="font-family:var(--mono); font-size:12.5px; color:var(--muted);">Client project — code not published</span>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="project-top">
+            <h3>OrangeHRM Automation Framework</h3>
+            <span class="result">+30% EFFICIENCY</span>
+          </div>
+          <p class="desc">A BDD test automation framework built against the OrangeHRM HR platform, automating end-to-end workflows to validate functional cycles and cut manual regression effort.</p>
+          <div class="stack">SpecFlow · C# · .NET · Page Object Model · BDD</div>
+          <div class="project-links">
+            <span style="font-family:var(--mono); font-size:12.5px; color:var(--muted);">Coursework project — code not published</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="wrap">
+      <div class="section-head"><span class="tag">05</span><h2>Education</h2></div>
+      <div class="edu">
+        <div class="edu-item">
+          <div class="when">2024 – Present</div>
+          <div>
+            <h3>MSc Global Software Development</h3>
+            <div class="where">Fulda University of Applied Sciences, Germany</div>
+          </div>
+        </div>
+        <div class="edu-item">
+          <div class="when">2019 – 2023</div>
+          <div>
+            <h3>BSc Computer Science</h3>
+            <div class="where">Muhammad Ali Jinnah University, Pakistan</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2>Get in touch</h2>
+    <p class="lead">Open to Werkstudent and full-time roles in QA automation or software development, based in or around Fulda.</p>
+    <div class="contact-grid">
+      <a href="mailto:hmmd97@gmail.com">hmmd97@gmail.com</a>
+      <span>+49 152 182 62190</span>
+      <a href="https://github.com/HammadAsif-997" target="_blank" rel="noopener">github.com/HammadAsif-997</a>
+      <a href="https://linkedin.com/in/hammad-asif-26466a91" target="_blank" rel="noopener">linkedin.com/in/hammad-asif-26466a91</a>
+    </div>
+    <div class="foot-note">© 2026 Hammad Asif · Fulda, Germany</div>
+  </div>
+</footer>
+
+
+
+</body>
+</html>
