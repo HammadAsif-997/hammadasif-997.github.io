@@ -5,224 +5,253 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hammad Asif — Software Developer & QA Automation Engineer</title>
 <meta name="description" content="Hammad Asif — Software Developer and QA Automation Engineer based in Fulda, Germany. Master's student in Global Software Development.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✓</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --bg:#EEF1F0;
-    --surface:#FFFFFF;
-    --ink:#1A2421;
-    --muted:#5B6B66;
-    --line:#D3DEDA;
-    --pass:#2E7D5B;
-    --pass-dim:#E4EFE9;
-    --amber:#9C7328;
-    --amber-dim:#F3EBDA;
-    --mono:'IBM Plex Mono', ui-monospace, monospace;
-    --sans:'IBM Plex Sans', system-ui, sans-serif;
+  :root {
+    --bg: #0b0f0e;
+    --surface: #131b18;
+    --surface-hover: #1a2622;
+    --ink: #f0f4f2;
+    --muted: #8a9e96;
+    --line: #22352f;
+    --pass: #10b981;
+    --pass-dim: rgba(16, 185, 129, 0.12);
+    --amber: #f59e0b;
+    --amber-dim: rgba(245, 158, 11, 0.12);
+    --cyan: #38bdf8;
+    --cyan-dim: rgba(56, 189, 248, 0.12);
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'Plus Jakarta Sans', sans-serif;
   }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth; scroll-padding-top:24px;}
-  body{
-    margin:0;
-    background:var(--bg);
-    color:var(--ink);
-    font-family:var(--sans);
-    line-height:1.55;
-    -webkit-font-smoothing:antialiased;
-  }
-  a{color:inherit;}
-  img{max-width:100%;}
 
-  .wrap{max-width:920px; margin:0 auto; padding:0 24px;}
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 32px; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    background-image: 
+      radial-gradient(circle at 15% 15%, rgba(16, 185, 129, 0.04) 0%, transparent 40%),
+      radial-gradient(circle at 85% 85%, rgba(56, 189, 248, 0.04) 0%, transparent 40%);
+    background-attachment: fixed;
+  }
+
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
 
   /* ---------- Header ---------- */
-  header.site{
-    padding:18px 0;
-    border-bottom:1px solid var(--line);
-    position:sticky; top:0; z-index:10;
-    background:rgba(238,241,240,0.92);
-    backdrop-filter:blur(6px);
+  header.site {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--line);
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(11, 15, 14, 0.85);
+    backdrop-filter: blur(12px);
   }
-  header.site .wrap{display:flex; align-items:center; justify-content:space-between; gap:16px;}
-  .brand{font-family:var(--mono); font-weight:600; font-size:15px; letter-spacing:0.2px;}
-  .brand .dot{color:var(--pass);}
-  nav.top{display:flex; gap:22px; font-size:14px;}
-  nav.top a{text-decoration:none; color:var(--muted); border-bottom:1px solid transparent; padding-bottom:2px;}
-  nav.top a:hover{color:var(--ink); border-bottom-color:var(--line);}
-  @media (max-width:640px){ nav.top{display:none;} }
+  header.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .brand { font-family: var(--mono); font-weight: 700; font-size: 16px; letter-spacing: -0.5px; }
+  .brand .dot { color: var(--pass); }
+  nav.top { display: flex; gap: 24px; font-size: 14px; font-weight: 500; }
+  nav.top a { color: var(--muted); transition: color .2s ease; }
+  nav.top a:hover { color: var(--pass); }
+  @media (max-width: 640px) { nav.top { display: none; } }
 
   /* ---------- Hero ---------- */
-  .hero{padding:64px 0 40px;}
-  .hero-grid{display:grid; grid-template-columns:1.3fr 1fr; gap:40px; align-items:start;}
-  @media (max-width:800px){ .hero-grid{grid-template-columns:1fr;} }
+  .hero { padding: 80px 0 60px; }
+  .hero-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; align-items: center; }
+  @media (max-width: 800px) { .hero-grid { grid-template-columns: 1fr; gap: 32px; } }
 
-  .status-line{
-    font-family:var(--mono); font-size:13px; color:var(--pass);
-    display:flex; align-items:center; gap:8px; margin-bottom:18px; min-height:18px;
+  .status-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--mono); font-size: 12px;
+    background: var(--pass-dim); color: var(--pass);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    border-radius: 20px; padding: 6px 14px; font-weight: 600;
+    margin-bottom: 20px;
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.1);
   }
-  .status-line .cursor{opacity:0.6;}
-  h1.name{
-    font-size:clamp(32px, 5vw, 48px);
-    line-height:1.1;
-    margin:0 0 10px;
-    font-weight:700;
-    letter-spacing:-0.5px;
+  .status-badge .pulse {
+    width: 8px; height: 8px; background: var(--pass); border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    animation: pulse 2s infinite;
   }
-  .role{
-    font-size:clamp(17px, 2.4vw, 20px);
-    color:var(--muted);
-    margin:0 0 22px;
-    max-width:46ch;
-  }
-  .pitch{max-width:56ch; margin:0 0 26px; font-size:15.5px;}
-  .links{display:flex; flex-wrap:wrap; gap:10px;}
-  .links a{
-    font-family:var(--mono); font-size:13px;
-    padding:8px 14px; border:1px solid var(--line); border-radius:5px;
-    text-decoration:none; color:var(--ink); background:var(--surface);
-    display:inline-flex; align-items:center; gap:7px;
-    transition:border-color .15s ease, transform .15s ease;
-  }
-  .links a.primary{background:var(--ink); color:var(--bg); border-color:var(--ink);}
-  .links a:hover{border-color:var(--pass); transform:translateY(-1px);}
-
-  /* environment card, styled like a test-report metadata block */
-  .env-card{
-    background:var(--surface);
-    border:1px solid var(--line);
-    border-radius:8px;
-    overflow:hidden;
-  }
-  .env-card .env-head{
-    font-family:var(--mono); font-size:11.5px; letter-spacing:0.4px;
-    color:var(--muted); background:var(--bg);
-    padding:10px 16px; border-bottom:1px solid var(--line);
-  }
-  .env-card dl{margin:0; padding:14px 16px;}
-  .env-card .row{display:flex; justify-content:space-between; gap:12px; padding:8px 0; border-bottom:1px dashed var(--line); font-size:14px;}
-  .env-card .row:last-child{border-bottom:none;}
-  .env-card dt{color:var(--muted);}
-  .env-card dd{margin:0; font-family:var(--mono); font-size:13px; text-align:right;}
-  .badge-pass{
-    display:inline-block; font-family:var(--mono); font-size:11px;
-    background:var(--pass-dim); color:var(--pass); border-radius:4px;
-    padding:2px 8px; font-weight:600;
+  @keyframes pulse {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
   }
 
-  /* ---------- Section shell ---------- */
-  section{padding:52px 0;}
-  section + section{border-top:1px solid var(--line);}
-  .section-head{display:flex; align-items:baseline; gap:12px; margin-bottom:28px;}
-  .section-head .tag{font-family:var(--mono); font-size:12px; color:var(--muted);}
-  h2{font-size:22px; margin:0; font-weight:700;}
+  h1.name {
+    font-size: clamp(38px, 5vw, 56px);
+    line-height: 1.05; margin: 0 0 12px; font-weight: 800;
+    letter-spacing: -1.5px;
+    background: linear-gradient(135deg, #fff 30%, var(--muted));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .role { font-size: clamp(18px, 2.5vw, 22px); color: var(--pass); margin: 0 0 20px; font-weight: 600; }
+  .pitch { max-width: 52ch; margin: 0 0 28px; font-size: 16px; color: var(--muted); }
+  
+  .links { display: flex; flex-wrap: wrap; gap: 12px; }
+  .links a {
+    font-family: var(--mono); font-size: 13px;
+    padding: 10px 18px; border: 1px solid var(--line); border-radius: 8px;
+    color: var(--ink); background: var(--surface);
+    display: inline-flex; align-items: center; gap: 8px; font-weight: 500;
+    transition: all .2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .links a.primary { background: var(--pass); color: #000; border-color: var(--pass); font-weight: 700; }
+  .links a.primary:hover { background: #0ea5e9; border-color: #0ea5e9; transform: translateY(-2px); }
+  .links a:not(.primary):hover { border-color: var(--pass); color: var(--pass); transform: translateY(-2px); }
+
+  /* Environment Code Card */
+  .env-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  }
+  .env-head {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 1px; text-transform: uppercase;
+    color: var(--muted); background: rgba(0,0,0,0.3);
+    padding: 12px 18px; border-bottom: 1px solid var(--line);
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .env-dots { display: flex; gap: 6px; }
+  .env-dots span { width: 8px; height: 8px; border-radius: 50%; background: var(--line); }
+  .env-dots span:nth-child(1) { background: #ef4444; }
+  .env-dots span:nth-child(2) { background: #f59e0b; }
+  .env-dots span:nth-child(3) { background: #10b981; }
+
+  .env-card dl { margin: 0; padding: 16px 20px; }
+  .env-card .row { display: flex; justify-content: space-between; gap: 12px; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.03); font-size: 14px; }
+  .env-card .row:last-child { border-bottom: none; }
+  .env-card dt { color: var(--muted); }
+  .env-card dd { margin: 0; font-family: var(--mono); font-size: 13px; color: var(--ink); text-align: right; }
+
+  /* ---------- Sections ---------- */
+  section { padding: 64px 0; border-top: 1px solid var(--line); }
+  .section-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 36px; }
+  .section-head .tag { font-family: var(--mono); font-size: 13px; color: var(--pass); font-weight: 700; }
+  h2 { font-size: 26px; margin: 0; font-weight: 800; letter-spacing: -0.5px; }
 
   /* ---------- About ---------- */
-  .about-text{max-width:68ch; font-size:15.5px;}
-  .about-text p{margin:0 0 14px;}
+  .about-text { max-width: 72ch; font-size: 17px; color: var(--muted); }
+  .about-text p { margin: 0 0 16px; }
+  .about-text strong { color: var(--ink); font-weight: 600; }
 
-  /* ---------- Skills ---------- */
-  .skills-card{
-    background:var(--surface); border:1px solid var(--line); border-radius:10px;
-    padding:28px 30px;
+  /* ---------- Skills Matrix ---------- */
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+  .skill-card {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+    padding: 24px; transition: border-color .2s ease;
   }
-  .skill-groups{display:grid; grid-template-columns:repeat(2,1fr); gap:22px 32px;}
-  @media (max-width:640px){ .skill-groups{grid-template-columns:1fr;} }
-  .skill-group{border-left:2px solid var(--line); padding-left:14px;}
-  .skill-group.dev{border-left-color:var(--amber);}
-  .skill-group.qa{border-left-color:var(--pass);}
-  .skill-group h3{
-    font-size:12px; text-transform:none; color:var(--muted);
-    font-weight:600; margin:0 0 10px; font-family:var(--mono); letter-spacing:0.2px;
+  .skill-card:hover { border-color: rgba(16, 185, 129, 0.4); }
+  .skill-card h3 {
+    font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;
+    color: var(--pass); font-family: var(--mono); margin: 0 0 14px; font-weight: 700;
   }
-  .chip-row{display:flex; flex-wrap:wrap; gap:8px;}
-  .chip{
-    font-family:var(--mono); font-size:12.5px;
-    background:var(--surface); border:1px solid var(--line);
-    border-radius:5px; padding:5px 9px;
-    display:inline-flex; align-items:center; gap:5px;
+  .chip-row { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip {
+    font-family: var(--mono); font-size: 12px;
+    background: rgba(255,255,255,0.03); border: 1px solid var(--line);
+    border-radius: 6px; padding: 6px 10px; color: var(--ink);
+    display: inline-flex; align-items: center; gap: 6px;
   }
-  .chip .ok{color:var(--pass); font-weight:700;}
+  .chip span { color: var(--pass); }
 
-  /* ---------- Experience (test-case styled timeline) ---------- */
-  .tc{
-    padding:20px 0; border-top:1px solid var(--line);
-  }
-  .tc:first-of-type{border-top:none;}
-  .tc-title{display:flex; flex-wrap:wrap; align-items:baseline; gap:10px; margin-bottom:4px;}
-  .tc-title h3{margin:0; font-size:16.5px; font-weight:700;}
-  .tc-meta{font-family:var(--mono); font-size:12px; color:var(--muted);}
-  .tc-body{font-size:14.5px; max-width:64ch;}
-  .tc-body ul{margin:8px 0 10px; padding-left:18px;}
-  .tc-body li{margin-bottom:4px;}
-  .tc-stack{font-family:var(--mono); font-size:11.5px; color:var(--muted); margin-top:8px;}
+  /* ---------- Experience ---------- */
+  .tc { padding: 28px 0; border-bottom: 1px solid var(--line); }
+  .tc:first-of-type { padding-top: 0; }
+  .tc:last-of-type { border-bottom: none; }
+  .tc-title { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
+  .tc-title h3 { margin: 0; font-size: 18px; font-weight: 700; }
+  .tc-meta { font-family: var(--mono); font-size: 13px; color: var(--pass); background: var(--pass-dim); padding: 4px 10px; border-radius: 6px; }
+  .tc-body { font-size: 15px; color: var(--muted); max-width: 72ch; }
+  .tc-body ul { margin: 12px 0; padding-left: 20px; }
+  .tc-body li { margin-bottom: 6px; }
+  .tc-stack { font-family: var(--mono); font-size: 12px; color: var(--cyan); margin-top: 12px; }
 
   /* ---------- Projects ---------- */
-  .project-group-label{
-    font-family:var(--mono); font-size:12px; letter-spacing:0.3px; color:var(--muted);
-    margin:0 0 14px; padding-bottom:8px; border-bottom:1px solid var(--line);
+  .project-group-label {
+    font-family: var(--mono); font-size: 13px; font-weight: 700; letter-spacing: 0.5px; color: var(--muted);
+    margin: 40px 0 20px; padding-bottom: 10px; border-bottom: 1px solid var(--line);
+    display: flex; align-items: center; gap: 10px;
   }
-  .project-group-label .sw{display:inline-block; width:7px; height:7px; border-radius:50%; margin-right:7px; position:relative; top:-1px;}
-  .project-group-label .sw.dev{background:var(--amber);}
-  .project-group-label .sw.qa{background:var(--pass);}
-  .projects{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
-  @media (max-width:760px){ .projects{grid-template-columns:1fr;} }
-  .project-group{margin-bottom:36px;}
-  .project-group:last-child{margin-bottom:0;}
-  .project{
-    background:var(--surface); border:1px solid var(--line); border-radius:10px;
-    overflow:hidden; display:flex; flex-direction:column;
-    transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  .project-group-label:first-of-type { margin-top: 0; }
+  .project-group-label .sw { width: 8px; height: 8px; border-radius: 50%; }
+  .project-group-label .sw.dev { background: var(--amber); }
+  .project-group-label .sw.qa { background: var(--pass); }
+
+  .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+  .project-card {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+    overflow: hidden; display: flex; flex-direction: column;
+    transition: all .25s cubic-bezier(0.16, 1, 0.3, 1);
   }
-  .project:hover{transform:translateY(-3px); box-shadow:0 12px 28px rgba(26,36,33,0.10); border-color:var(--pass);}
-  .project-media{aspect-ratio:16/9; overflow:hidden; background:var(--bg); border-bottom:1px solid var(--line);}
-  .project-media img{width:100%; height:100%; object-fit:cover; object-position:top; display:block;}
-  .project-media.terminal{
-    display:flex; flex-direction:column; justify-content:center; gap:6px;
-    background:var(--ink); padding:18px 20px; font-family:var(--mono); font-size:12px; color:#B9E3CC;
+  .project-card:hover { transform: translateY(-4px); border-color: var(--pass); box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+  
+  .project-preview {
+    background: #080c0a; border-bottom: 1px solid var(--line);
+    padding: 20px; font-family: var(--mono); font-size: 12px; min-height: 140px;
+    display: flex; flex-direction: column; justify-content: center; position: relative;
+    overflow: hidden;
   }
-  .project-media.terminal .cmd{color:#8FA69C;}
-  .project-media.terminal .ok{color:#7BD9A0; font-weight:600;}
-  .project-media.locked{
-    display:flex; align-items:center; justify-content:center;
-    background:var(--bg); font-family:var(--mono); font-size:12px; color:var(--muted); gap:8px;
+  .project-preview::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 24px;
+    background: rgba(255,255,255,0.02); border-bottom: 1px solid var(--line);
+    display: flex; align-items: center; padding-left: 10px;
   }
-  .project-inner{padding:18px 20px; flex:1; display:flex; flex-direction:column;}
-  .project-top{display:flex; justify-content:space-between; align-items:flex-start; gap:12px; flex-wrap:wrap; margin-bottom:2px;}
-  .project h3{margin:0; font-size:16px; line-height:1.3;}
-  .project .result{font-family:var(--mono); font-size:11px; color:var(--pass); white-space:nowrap; padding-top:3px;}
-  .project p.desc{font-size:13.5px; margin:8px 0 12px; flex:1;}
-  .project .stack{font-family:var(--mono); font-size:11px; color:var(--muted); margin-bottom:14px;}
-  .project-links{display:flex; gap:10px; flex-wrap:wrap;}
-  .project-links a{
-    font-family:var(--mono); font-size:12.5px; text-decoration:none;
-    color:var(--ink); border-bottom:1px solid var(--line); padding-bottom:1px;
-  }
-  .project-links a:hover{border-bottom-color:var(--pass); color:var(--pass);}
+  .preview-code { color: #8a9e96; line-height: 1.5; }
+  .preview-code .keyword { color: #f472b6; }
+  .preview-code .string { color: #34d399; }
+  .preview-code .method { color: #60a5fa; }
+  .preview-code .highlight { color: #fbbf24; font-weight: 600; }
+
+  .project-inner { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+  .project-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 8px; }
+  .project-card h3 { margin: 0; font-size: 18px; font-weight: 700; }
+  .project-badge { font-family: var(--mono); font-size: 11px; padding: 3px 8px; border-radius: 4px; font-weight: 700; white-space: nowrap; }
+  .badge-pass { background: var(--pass-dim); color: var(--pass); }
+  .badge-amber { background: var(--amber-dim); color: var(--amber); }
+  .badge-cyan { background: var(--cyan-dim); color: var(--cyan); }
+
+  .project-desc { font-size: 14.5px; color: var(--muted); margin: 0 0 16px; flex: 1; }
+  .project-stack { font-family: var(--mono); font-size: 11.5px; color: var(--cyan); margin-bottom: 20px; }
+  .project-links { display: flex; flex-wrap: wrap; gap: 16px; margin-top: auto; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.04); }
+  .project-links a { font-family: var(--mono); font-size: 13px; color: var(--ink); font-weight: 600; display: inline-flex; align-items: center; gap: 4px; transition: color .2s ease; }
+  .project-links a:hover { color: var(--pass); }
 
   /* ---------- Education ---------- */
-  .edu{display:flex; flex-direction:column; gap:16px;}
-  .edu-item{display:grid; grid-template-columns:150px 1fr; gap:16px; font-size:14.5px;}
-  @media (max-width:640px){ .edu-item{grid-template-columns:1fr; gap:4px;} }
-  .edu-item .when{font-family:var(--mono); font-size:12.5px; color:var(--muted);}
-  .edu-item h3{margin:0 0 2px; font-size:15.5px;}
-  .edu-item .where{color:var(--muted); font-size:13.5px;}
+  .edu-list { display: flex; flex-direction: column; gap: 16px; }
+  .edu-item {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+    padding: 20px 24px; display: grid; grid-template-columns: 160px 1fr; gap: 20px; align-items: center;
+  }
+  @media (max-width: 640px) { .edu-item { grid-template-columns: 1fr; gap: 8px; } }
+  .edu-item .when { font-family: var(--mono); font-size: 13px; color: var(--pass); }
+  .edu-item h3 { margin: 0 0 4px; font-size: 17px; font-weight: 700; }
+  .edu-item .where { color: var(--muted); font-size: 14px; }
 
-  /* ---------- Contact / footer ---------- */
-  footer{padding:56px 0 64px;}
-  footer .wrap{display:flex; flex-direction:column; gap:18px;}
-  footer h2{margin-bottom:6px;}
-  footer p.lead{color:var(--muted); font-size:14.5px; margin:0 0 6px; max-width:52ch;}
-  .contact-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:10px 24px; margin-top:8px;}
-  @media (max-width:560px){ .contact-grid{grid-template-columns:1fr;} }
-  .contact-grid a, .contact-grid span{font-family:var(--mono); font-size:13.5px; text-decoration:none; color:var(--ink);}
-  .contact-grid a:hover{color:var(--pass);}
-  .foot-note{font-family:var(--mono); font-size:11.5px; color:var(--muted); margin-top:28px;}
+  /* ---------- Footer ---------- */
+  footer { padding: 80px 0; border-top: 1px solid var(--line); background: #080c0a; }
+  footer h2 { margin-bottom: 12px; }
+  footer .lead { color: var(--muted); font-size: 16px; margin: 0 0 32px; max-width: 50ch; }
+  .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 40px; }
+  .contact-card {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 20px;
+    font-family: var(--mono); font-size: 14px; display: flex; align-items: center; gap: 12px;
+    transition: border-color .2s ease, transform .2s ease;
+  }
+  .contact-card:hover { border-color: var(--pass); transform: translateY(-2px); }
+  .foot-note { font-family: var(--mono); font-size: 12px; color: var(--muted); }
 
-  :focus-visible{outline:2px solid var(--pass); outline-offset:2px;}
-  @media (prefers-reduced-motion: reduce){ * { animation-duration:0.001ms !important; transition-duration:0.001ms !important; } }
+  :focus-visible { outline: 2px solid var(--pass); outline-offset: 2px; }
 </style>
 </head>
 <body>
@@ -232,6 +261,7 @@
     <div class="brand">hammad<span class="dot">.</span>asif</div>
     <nav class="top">
       <a href="#about">About</a>
+      <a href="#skills">Skills</a>
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
       <a href="#education">Education</a>
@@ -244,24 +274,28 @@
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
-        <div class="status-line" id="statusLine" aria-live="polite">
-          <span class="badge-pass" style="padding:3px 9px;">OPEN TO WORK</span>
+        <div class="status-badge">
+          <span class="pulse"></span>
+          OPEN TO WORK · WERKSTUDENT / FULL-TIME
         </div>
         <h1 class="name">Hammad Asif</h1>
         <p class="role">Software Developer & QA Automation Engineer</p>
         <p class="pitch">I build automated test suites and web applications, and I like finding the bug before the user does. Currently completing a Master's in Global Software Development at Fulda University of Applied Sciences.</p>
         <div class="links">
-          <a class="primary" href="mailto:hmmd97@gmail.com"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z" opacity="0"/><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>Email me</a>
-          <a href="https://github.com/HammadAsif-997" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-1.04-.01-1.88-2.78.61-3.37-1.2-3.37-1.2-.45-1.18-1.11-1.49-1.11-1.49-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.36-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.04 1.03-2.76-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.64 1.03 2.76 0 3.94-2.34 4.81-4.57 5.06.36.32.68.95.68 1.92 0 1.39-.01 2.51-.01 2.85 0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z"/></svg>GitHub</a>
-          <a href="https://linkedin.com/in/hammad-asif-26466a91" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM3.2 8.75h3.5V21H3.2V8.75Zm6.2 0h3.35v1.68h.05c.47-.87 1.6-1.79 3.3-1.79 3.53 0 4.18 2.24 4.18 5.15V21h-3.5v-6.2c0-1.48-.03-3.38-2.06-3.38-2.07 0-2.39 1.6-2.39 3.27V21H9.4V8.75Z"/></svg>LinkedIn</a>
+          <a class="primary" href="mailto:hmmd97@gmail.com">Email me</a>
+          <a href="https://github.com/HammadAsif-997" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://linkedin.com/in/hammad-asif-26466a91" target="_blank" rel="noopener">LinkedIn</a>
         </div>
       </div>
 
       <div class="env-card">
-        <div class="env-head">ENVIRONMENT</div>
+        <div class="env-head">
+          <span>ENVIRONMENT</span>
+          <div class="env-dots"><span></span><span></span><span></span></div>
+        </div>
         <dl>
           <div class="row"><dt>Location</dt><dd>Fulda, Germany</dd></div>
-          <div class="row"><dt>Status</dt><dd><span class="badge-pass">OPEN TO WORK</span></dd></div>
+          <div class="row"><dt>Status</dt><dd><span style="color: var(--pass)">OPEN TO WORK</span></dd></div>
           <div class="row"><dt>Seeking</dt><dd>Werkstudent / Vollzeit</dd></div>
           <div class="row"><dt>Notice</dt><dd>Immediate</dd></div>
           <div class="row"><dt>Languages</dt><dd>English (C1) · German (B1)</dd></div>
@@ -284,83 +318,81 @@
   <section id="skills">
     <div class="wrap">
       <div class="section-head"><span class="tag">02</span><h2>Skills</h2></div>
-      <div class="skills-card">
-      <div class="skill-groups">
-        <div class="skill-group dev">
+      <div class="skills-grid">
+        <div class="skill-card">
           <h3>Languages</h3>
           <div class="chip-row">
-            <span class="chip"><span class="ok">✓</span>JavaScript</span>
-            <span class="chip"><span class="ok">✓</span>TypeScript</span>
-            <span class="chip"><span class="ok">✓</span>Python</span>
-            <span class="chip"><span class="ok">✓</span>SQL</span>
-            <span class="chip"><span class="ok">✓</span>HTML5</span>
-            <span class="chip"><span class="ok">✓</span>CSS3</span>
+            <span class="chip"><span>✓</span>JavaScript</span>
+            <span class="chip"><span>✓</span>TypeScript</span>
+            <span class="chip"><span>✓</span>Python</span>
+            <span class="chip"><span>✓</span>SQL</span>
+            <span class="chip"><span>✓</span>HTML5</span>
+            <span class="chip"><span>✓</span>CSS3</span>
           </div>
         </div>
-        <div class="skill-group dev">
+        <div class="skill-card">
           <h3>Frontend</h3>
           <div class="chip-row">
-            <span class="chip"><span class="ok">✓</span>React.js</span>
-            <span class="chip"><span class="ok">✓</span>Next.js</span>
-            <span class="chip"><span class="ok">✓</span>Svelte</span>
-            <span class="chip"><span class="ok">✓</span>Tailwind CSS</span>
+            <span class="chip"><span>✓</span>React.js</span>
+            <span class="chip"><span>✓</span>Next.js</span>
+            <span class="chip"><span>✓</span>Svelte</span>
+            <span class="chip"><span>✓</span>Tailwind CSS</span>
           </div>
         </div>
-        <div class="skill-group dev">
+        <div class="skill-card">
           <h3>Backend</h3>
           <div class="chip-row">
-            <span class="chip"><span class="ok">✓</span>Node.js</span>
-            <span class="chip"><span class="ok">✓</span>Express.js</span>
-            <span class="chip"><span class="ok">✓</span>Spring Boot</span>
-            <span class="chip"><span class="ok">✓</span>Laravel</span>
-            <span class="chip"><span class="ok">✓</span>CodeIgniter</span>
-            <span class="chip"><span class="ok">✓</span>WordPress</span>
-            <span class="chip"><span class="ok">✓</span>MySQL</span>
-            <span class="chip"><span class="ok">✓</span>MongoDB</span>
-            <span class="chip"><span class="ok">✓</span>Firebase</span>
+            <span class="chip"><span>✓</span>Node.js</span>
+            <span class="chip"><span>✓</span>Express.js</span>
+            <span class="chip"><span>✓</span>Spring Boot</span>
+            <span class="chip"><span>✓</span>Laravel</span>
+            <span class="chip"><span>✓</span>CodeIgniter</span>
+            <span class="chip"><span>✓</span>WordPress</span>
+            <span class="chip"><span>✓</span>MySQL</span>
+            <span class="chip"><span>✓</span>MongoDB</span>
+            <span class="chip"><span>✓</span>Firebase</span>
           </div>
         </div>
-        <div class="skill-group qa">
+        <div class="skill-card">
           <h3>Test automation</h3>
           <div class="chip-row">
-            <span class="chip"><span class="ok">✓</span>Selenium</span>
-            <span class="chip"><span class="ok">✓</span>Playwright</span>
-            <span class="chip"><span class="ok">✓</span>Cypress</span>
-            <span class="chip"><span class="ok">✓</span>RestAssured</span>
-            <span class="chip"><span class="ok">✓</span>Postman</span>
-            <span class="chip"><span class="ok">✓</span>JMeter</span>
-            <span class="chip"><span class="ok">✓</span>React Testing Library</span>
+            <span class="chip"><span>✓</span>Selenium</span>
+            <span class="chip"><span>✓</span>Playwright</span>
+            <span class="chip"><span>✓</span>Cypress</span>
+            <span class="chip"><span>✓</span>RestAssured</span>
+            <span class="chip"><span>✓</span>Postman</span>
+            <span class="chip"><span>✓</span>JMeter</span>
+            <span class="chip"><span>✓</span>React Testing Library</span>
           </div>
         </div>
-        <div class="skill-group">
+        <div class="skill-card">
           <h3>Cloud &amp; tools</h3>
           <div class="chip-row">
-            <span class="chip"><span class="ok">✓</span>AWS (EC2/S3)</span>
-            <span class="chip"><span class="ok">✓</span>GitHub Actions</span>
-            <span class="chip"><span class="ok">✓</span>Firebase Hosting</span>
-            <span class="chip"><span class="ok">✓</span>Jenkins</span>
-            <span class="chip"><span class="ok">✓</span>Git</span>
-            <span class="chip"><span class="ok">✓</span>Jira</span>
+            <span class="chip"><span>✓</span>AWS (EC2/S3)</span>
+            <span class="chip"><span>✓</span>GitHub Actions</span>
+            <span class="chip"><span>✓</span>Firebase Hosting</span>
+            <span class="chip"><span>✓</span>Jenkins</span>
+            <span class="chip"><span>✓</span>Git</span>
+            <span class="chip"><span>✓</span>Jira</span>
           </div>
         </div>
-        <div class="skill-group dev">
+        <div class="skill-card">
           <h3>Data &amp; ML (applied)</h3>
           <div class="chip-row">
-            <span class="chip"><span class="ok">✓</span>Python</span>
-            <span class="chip"><span class="ok">✓</span>pandas</span>
-            <span class="chip"><span class="ok">✓</span>scikit-learn</span>
+            <span class="chip"><span>✓</span>Python</span>
+            <span class="chip"><span>✓</span>pandas</span>
+            <span class="chip"><span>✓</span>scikit-learn</span>
           </div>
         </div>
-        <div class="skill-group">
+        <div class="skill-card">
           <h3>Architecture</h3>
           <div class="chip-row">
-            <span class="chip"><span class="ok">✓</span>RESTful APIs</span>
-            <span class="chip"><span class="ok">✓</span>Clean Architecture</span>
-            <span class="chip"><span class="ok">✓</span>MVVM</span>
-            <span class="chip"><span class="ok">✓</span>Agile/Scrum</span>
+            <span class="chip"><span>✓</span>RESTful APIs</span>
+            <span class="chip"><span>✓</span>Clean Architecture</span>
+            <span class="chip"><span>✓</span>MVVM</span>
+            <span class="chip"><span>✓</span>Agile/Scrum</span>
           </div>
         </div>
-      </div>
       </div>
     </div>
   </section>
@@ -370,54 +402,48 @@
       <div class="section-head"><span class="tag">03</span><h2>Experience</h2></div>
 
       <div class="tc">
-        <div>
-          <div class="tc-title">
-            <h3>Software QA Engineer &amp; Developer — VentureDive</h3>
-            <span class="tc-meta">Jan 2023 – Sep 2024</span>
-          </div>
-          <div class="tc-body">
-            <ul>
-              <li>Combined QA and development role across AI-based and FinTech client products.</li>
-              <li>Contributed to feature development early on — REST API endpoints and data-processing logic — before the role shifted mostly to QA and test automation.</li>
-              <li>Automated 80% of API tests with RestAssured (Java) and Postman (JavaScript); wired automated suites into CI/CD via Jenkins, versioned through GitHub.</li>
-              <li>Built automated UI test suites with Selenium (C#), Playwright and Cypress, cutting manual testing effort by 50%.</li>
-              <li>Ran load and performance tests with JMeter to surface bottlenecks under peak traffic.</li>
-              <li>Worked cross-functionally with development teams in an Agile/Scrum environment.</li>
-            </ul>
-            <div class="tc-stack">RestAssured · Postman · Selenium · Playwright · Cypress · JMeter · Jenkins · GitHub</div>
-          </div>
+        <div class="tc-title">
+          <h3>Software QA Engineer &amp; Developer — VentureDive</h3>
+          <span class="tc-meta">Jan 2023 – Sep 2024</span>
+        </div>
+        <div class="tc-body">
+          <ul>
+            <li>Combined QA and development role across AI-based and FinTech client products.</li>
+            <li>Contributed to feature development early on — REST API endpoints and data-processing logic — before the role shifted mostly to QA and test automation.</li>
+            <li>Automated 80% of API tests with RestAssured (Java) and Postman (JavaScript); wired automated suites into CI/CD via Jenkins, versioned through GitHub.</li>
+            <li>Built automated UI test suites with Selenium (C#), Playwright and Cypress, cutting manual testing effort by 50%.</li>
+            <li>Ran load and performance tests with JMeter to surface bottlenecks under peak traffic.</li>
+            <li>Worked cross-functionally with development teams in an Agile/Scrum environment.</li>
+          </ul>
+          <div class="tc-stack">RestAssured · Postman · Selenium · Playwright · Cypress · JMeter · Jenkins · GitHub</div>
         </div>
       </div>
 
       <div class="tc">
-        <div>
-          <div class="tc-title">
-            <h3>Junior Developer &amp; Quality Control — Etech Maestro</h3>
-            <span class="tc-meta">Jul 2017 – Jul 2019</span>
-          </div>
-          <div class="tc-body">
-            <ul>
-              <li>Worked on a nationwide cinema and event ticket-booking platform — fixed bugs and built minor features across the booking flow, admin backoffice and ticket/notification management, under senior developers.</li>
-              <li>Built and maintained a separate ticketing system for PortGrand, a Karachi entertainment and dining venue, to support online ticket sales.</li>
-              <li>Designed and built several WordPress sites — frontend design, JavaScript interactivity, PHP customization — for various client projects.</li>
-              <li>Took on quality control alongside development: manually testing bug fixes and new features before release and feeding issues back to the dev team.</li>
-            </ul>
-            <div class="tc-stack">Laravel (PHP) · React · JavaScript · MySQL · WordPress</div>
-          </div>
+        <div class="tc-title">
+          <h3>Junior Developer &amp; Quality Control — Etech Maestro</h3>
+          <span class="tc-meta">Jul 2017 – Jul 2019</span>
+        </div>
+        <div class="tc-body">
+          <ul>
+            <li>Worked on a nationwide cinema and event ticket-booking platform — fixed bugs and built minor features across the booking flow, admin backoffice and ticket/notification management, under senior developers.</li>
+            <li>Built and maintained a separate ticketing system for PortGrand, a Karachi entertainment and dining venue, to support online ticket sales.</li>
+            <li>Designed and built several WordPress sites — frontend design, JavaScript interactivity, PHP customization — for various client projects.</li>
+            <li>Took on quality control alongside development: manually testing bug fixes and new features before release and feeding issues back to the dev team.</li>
+          </ul>
+          <div class="tc-stack">Laravel (PHP) · React · JavaScript · MySQL · WordPress</div>
         </div>
       </div>
 
       <div class="tc">
-        <div>
-          <div class="tc-title">
-            <h3>Software Developer — Etech Maestro (Internship)</h3>
-            <span class="tc-meta">Jan 2017 – Jul 2017</span>
-          </div>
-          <div class="tc-body">
-            <ul>
-              <li>Entry-level internship — learned the company's development workflow, coding practices and team communication.</li>
-            </ul>
-          </div>
+        <div class="tc-title">
+          <h3>Software Developer — Etech Maestro (Internship)</h3>
+          <span class="tc-meta">Jan 2017 – Jul 2017</span>
+        </div>
+        <div class="tc-body">
+          <ul>
+            <li>Entry-level internship — learned the company's development workflow, coding practices and team communication.</li>
+          </ul>
         </div>
       </div>
 
@@ -428,157 +454,188 @@
     <div class="wrap">
       <div class="section-head"><span class="tag">04</span><h2>Projects</h2></div>
 
-      <div class="project-group">
-        <div class="project-group-label"><span class="sw dev"></span>DEVELOPMENT</div>
-        <div class="projects">
+      <div class="project-group-label"><span class="sw dev"></span>DEVELOPMENT</div>
+      <div class="projects-grid">
 
-          <div class="project">
-            <div class="project-media">
-              <img src="https://raw.githubusercontent.com/HammadAsif-997/Swoplet/master/product-detail-page.png" alt="Swoplet product detail page with AI price prediction" loading="lazy">
-            </div>
-            <div class="project-inner">
-              <div class="project-top">
-                <h3>Swoplet — Fulda University Marketplace</h3>
-                <span class="result">TEAM LEAD</span>
-              </div>
-              <p class="desc">A marketplace for Fulda University students to swap items and chat in real time. Led a 5-person team, built real-time chat and search across the full stack, plus a price-prediction feature using an ML model estimating fair resale price. Also owned QA for the platform before releases.</p>
-              <div class="stack">React.js · Express.js · MySQL · Socket.io · Python/scikit-learn · Flask · AWS</div>
-              <div class="project-links">
-                <a href="https://github.com/HammadAsif-997/Swoplet" target="_blank" rel="noopener">Repository →</a>
-              </div>
+        <div class="project-card">
+          <div class="project-preview">
+            <div class="preview-code">
+              <span class="keyword">class</span> <span class="method">SwopletMarketplace</span> &#123;<br>
+              &nbsp;&nbsp;realtimeChat: <span class="string">true</span>,<br>
+              &nbsp;&nbsp;mlPricePrediction: <span class="highlight">active</span><br>
+              &#125;
             </div>
           </div>
-
-          <div class="project">
-            <div class="project-media">
-              <img src="https://raw.githubusercontent.com/HammadAsif-997/Distributed-Application-Spring-Boot-Java/main/Screenshots/product-management.png" alt="SaaS-Based Webshop product management screen" loading="lazy">
+          <div class="project-inner">
+            <div class="project-header">
+              <h3>Swoplet — Fulda University Marketplace</h3>
+              <span class="project-badge badge-amber">TEAM LEAD</span>
             </div>
-            <div class="project-inner">
-              <div class="project-top">
-                <h3>SaaS-Based Webshop — Spring Boot &amp; Svelte</h3>
-                <span class="result">PASS</span>
-              </div>
-              <p class="desc">REST APIs in Spring Boot for authentication, products, cart and orders with server-side validation, plus a Svelte frontend with pagination and unified error handling. Also demonstrates the Facade/Adapter patterns and live reviews over WebSocket.</p>
-              <div class="stack">Java 17 · Spring Boot · Svelte · WebSocket/STOMP · JPA/H2</div>
-              <div class="project-links">
-                <a href="https://github.com/HammadAsif-997/Distributed-Application-Spring-Boot-Java" target="_blank" rel="noopener">Repository →</a>
-              </div>
+            <p class="project-desc">A marketplace for Fulda University students to swap items and chat in real time. Led a 5-person team, built real-time chat and search across the full stack, plus a price-prediction feature using an ML model estimating fair resale price. Also owned QA for the platform before releases.</p>
+            <div class="project-stack">React.js · Express.js · MySQL · Socket.io · Python/scikit-learn · Flask · AWS</div>
+            <div class="project-links">
+              <a href="https://github.com/HammadAsif-997/Swoplet" target="_blank" rel="noopener">Repository →</a>
             </div>
           </div>
-
-          <div class="project">
-            <div class="project-media locked">🔒 code not published</div>
-            <div class="project-inner">
-              <div class="project-top">
-                <h3>Pharmaceutical Inventory Management System</h3>
-                <span class="result">CLIENT PROJECT</span>
-              </div>
-              <p class="desc">A full inventory management system for a pharmaceutical company — stock tracking, supplier management, user roles/permissions, real-time stock updates, invoicing and reporting.</p>
-              <div class="stack">CodeIgniter (PHP) · MySQL</div>
-              <div class="project-links">
-                <span style="font-family:var(--mono); font-size:12px; color:var(--muted);">Client project</span>
-              </div>
-            </div>
-          </div>
-
         </div>
+
+        <div class="project-card">
+          <div class="project-preview">
+            <div class="preview-code">
+              <span class="keyword">@RestController</span><br>
+              <span class="method">public class</span> <span class="highlight">WebShopAPI</span> &#123;<br>
+              &nbsp;&nbsp;<span class="string">// STOMP WebSocket Live Reviews</span><br>
+              &#125;
+            </div>
+          </div>
+          <div class="project-inner">
+            <div class="project-header">
+              <h3>SaaS-Based Webshop — Spring Boot &amp; Svelte</h3>
+              <span class="project-badge badge-cyan">PASS</span>
+            </div>
+            <p class="project-desc">REST APIs in Spring Boot for authentication, products, cart and orders with server-side validation, plus a Svelte frontend with pagination and unified error handling. Also demonstrates the Facade/Adapter patterns and live reviews over WebSocket.</p>
+            <div class="project-stack">Java 17 · Spring Boot · Svelte · WebSocket/STOMP · JPA/H2</div>
+            <div class="project-links">
+              <a href="https://github.com/HammadAsif-997/Distributed-Application-Spring-Boot-Java" target="_blank" rel="noopener">Repository →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-preview">
+            <div class="preview-code">
+              <span class="keyword">module</span> PharmaInventory &#123;<br>
+              &nbsp;&nbsp;stockTracking: <span class="highlight">realtime</span>,<br>
+              &nbsp;&nbsp;invoicingModule: <span class="string">enabled</span><br>
+              &#125;
+            </div>
+          </div>
+          <div class="project-inner">
+            <div class="project-header">
+              <h3>Pharmaceutical Inventory Management System</h3>
+              <span class="project-badge badge-amber">CLIENT PROJECT</span>
+            </div>
+            <p class="project-desc">A full inventory management system for a pharmaceutical company — stock tracking, supplier management, user roles/permissions, real-time stock updates, invoicing and reporting.</p>
+            <div class="project-stack">CodeIgniter (PHP) · MySQL</div>
+            <div class="project-links">
+              <span style="font-family:var(--mono); font-size:12px; color:var(--muted);">Client project</span>
+            </div>
+          </div>
+        </div>
+
       </div>
 
-      <div class="project-group">
-        <div class="project-group-label"><span class="sw qa"></span>QA &amp; TEST AUTOMATION</div>
-        <div class="projects">
+      <div class="project-group-label" style="margin-top: 48px;"><span class="sw qa"></span>QA &amp; TEST AUTOMATION</div>
+      <div class="projects-grid">
 
-          <div class="project">
-            <div class="project-media terminal">
-              <div class="cmd">$ mvn test</div>
-              <div>Tests run: 13, Failures: 0</div>
-              <div class="ok">✓ BUILD SUCCESS</div>
-            </div>
-            <div class="project-inner">
-              <div class="project-top">
-                <h3>Advanced REST API Test Framework</h3>
-                <span class="result">13 TESTS · PASS</span>
-              </div>
-              <p class="desc">Data-driven API testing framework covering full CRUD, JSON Schema validation and response comparison against saved baselines, with automatic Extent Report generation on every run.</p>
-              <div class="stack">RestAssured · Java · TestNG · Extent Reports · Faker</div>
-              <div class="project-links">
-                <a href="https://github.com/HammadAsif-997/RestAssuredApiTesting" target="_blank" rel="noopener">Repository →</a>
-                <a href="https://hammadasif-997.github.io/RestAssuredApiTesting/reports/Test-Report-2024.08.29.20.46.04.html" target="_blank" rel="noopener">Test report →</a>
-              </div>
+        <div class="project-card">
+          <div class="project-preview">
+            <div class="preview-code">
+              <span class="keyword">mvn test</span> -> 13 tests run<br>
+              <span class="highlight">BUILD SUCCESS [0 failures]</span><br>
+              <span class="string">Extent Reports Generated</span>
             </div>
           </div>
-
-          <div class="project">
-            <div class="project-media terminal">
-              <div class="cmd">$ mvn test</div>
-              <div>Tests run: 9, Failures: 0</div>
-              <div class="ok">✓ BUILD SUCCESS</div>
+          <div class="project-inner">
+            <div class="project-header">
+              <h3>Advanced REST API Test Framework</h3>
+              <span class="project-badge badge-pass">13 TESTS · PASS</span>
             </div>
-            <div class="project-inner">
-              <div class="project-top">
-                <h3>Selenium UI Automation Framework</h3>
-                <span class="result">9 SCENARIOS · PASS</span>
-              </div>
-              <p class="desc">End-to-end UI test suite covering login, sorting, cart and multi-currency checkout flows across two e-commerce sites, built with the Page Object Model.</p>
-              <div class="stack">Selenium · Java · TestNG · Maven · POM</div>
-              <div class="project-links">
-                <a href="https://github.com/HammadAsif-997/SeleniumProjectWith-Bdd-Pom-Java" target="_blank" rel="noopener">Repository →</a>
-                <a href="https://hammadasif-997.github.io/SeleniumProjectWith-Bdd-Pom-Java/reports/Test-Report-2024.08.29.23.26.02.html" target="_blank" rel="noopener">Test report →</a>
-              </div>
+            <p class="project-desc">Data-driven API testing framework covering full CRUD, JSON Schema validation and response comparison against saved baselines, with automatic Extent Report generation on every run.</p>
+            <div class="project-stack">RestAssured · Java · TestNG · Extent Reports · Faker</div>
+            <div class="project-links">
+              <a href="https://github.com/HammadAsif-997/RestAssuredApiTesting" target="_blank" rel="noopener">Repository →</a>
+              <a href="https://hammadasif-997.github.io/RestAssuredApiTesting/reports/Test-Report-2024.08.29.20.46.04.html" target="_blank" rel="noopener">Test report →</a>
             </div>
           </div>
-
-          <div class="project">
-            <div class="project-media terminal">
-              <div class="cmd">$ mvn test</div>
-              <div>Tests run: 5, Failures: 0</div>
-              <div class="ok">✓ BUILD SUCCESS</div>
-            </div>
-            <div class="project-inner">
-              <div class="project-top">
-                <h3>REST API Test Suite — RestAssured</h3>
-                <span class="result">5 TESTS · PASS</span>
-              </div>
-              <p class="desc">Full CRUD coverage over a public REST API — GET, POST, PUT, PATCH, DELETE — with Hamcrest assertions on status codes and response bodies.</p>
-              <div class="stack">RestAssured · Java · TestNG · Maven</div>
-              <div class="project-links">
-                <a href="https://github.com/HammadAsif-997/RestAssurePractice" target="_blank" rel="noopener">Repository →</a>
-                <a href="https://hammadasif-997.github.io/RestAssurePractice/reports/index.html" target="_blank" rel="noopener">Test report →</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="project">
-            <div class="project-media locked">🔒 code not published</div>
-            <div class="project-inner">
-              <div class="project-top">
-                <h3>Test Blaze — E-Commerce QA Suite</h3>
-                <span class="result">−30% DEFECTS</span>
-              </div>
-              <p class="desc">UI and API test coverage for an e-commerce application's core modules. Combined Selenium and RestAssured for functional coverage, Postman for backend contract checks, and JMeter for load testing under high traffic.</p>
-              <div class="stack">Selenium · RestAssured · Postman · JMeter · TestRail</div>
-              <div class="project-links">
-                <span style="font-family:var(--mono); font-size:12px; color:var(--muted);">Client project</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="project">
-            <div class="project-media locked">🔒 code not published</div>
-            <div class="project-inner">
-              <div class="project-top">
-                <h3>OrangeHRM QA Framework</h3>
-                <span class="result">+30% EFFICIENCY</span>
-              </div>
-              <p class="desc">End-to-end QA framework for hardware/software integration testing against the OrangeHRM platform. Test documentation in Gherkin, defect tracking and reporting across modules.</p>
-              <div class="stack">C# · SpecFlow · .NET · BDD</div>
-              <div class="project-links">
-                <span style="font-family:var(--mono); font-size:12px; color:var(--muted);">Coursework project</span>
-              </div>
-            </div>
-          </div>
-
         </div>
+
+        <div class="project-card">
+          <div class="project-preview">
+            <div class="preview-code">
+              <span class="keyword">mvn test</span> -> PageObject Pattern<br>
+              <span class="highlight">Multi-currency Checkout UI</span><br>
+              <span class="string">Status: PASSED</span>
+            </div>
+          </div>
+          <div class="project-inner">
+            <div class="project-header">
+              <h3>Selenium UI Automation Framework</h3>
+              <span class="project-badge badge-pass">9 SCENARIOS · PASS</span>
+            </div>
+            <p class="project-desc">End-to-end UI test suite covering login, sorting, cart and multi-currency checkout flows across two e-commerce sites, built with the Page Object Model.</p>
+            <div class="project-stack">Selenium · Java · TestNG · Maven · POM</div>
+            <div class="project-links">
+              <a href="https://github.com/HammadAsif-997/SeleniumProjectWith-Bdd-Pom-Java" target="_blank" rel="noopener">Repository →</a>
+              <a href="https://hammadasif-997.github.io/SeleniumProjectWith-Bdd-Pom-Java/reports/Test-Report-2024.08.29.23.26.02.html" target="_blank" rel="noopener">Test report →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-preview">
+            <div class="preview-code">
+              <span class="keyword">mvn test</span> -> 5 tests run<br>
+              <span class="highlight">BUILD SUCCESS [0 failures]</span><br>
+              <span class="string">Hamcrest Assertions</span>
+            </div>
+          </div>
+          <div class="project-inner">
+            <div class="project-header">
+              <h3>REST API Test Suite — RestAssured</h3>
+              <span class="project-badge badge-pass">5 TESTS · PASS</span>
+            </div>
+            <p class="project-desc">Full CRUD coverage over a public REST API — GET, POST, PUT, PATCH, DELETE — with Hamcrest assertions on status codes and response bodies.</p>
+            <div class="project-stack">RestAssured · Java · TestNG · Maven</div>
+            <div class="project-links">
+              <a href="https://github.com/HammadAsif-997/RestAssurePractice" target="_blank" rel="noopener">Repository →</a>
+              <a href="https://hammadasif-997.github.io/RestAssurePractice/reports/index.html" target="_blank" rel="noopener">Test report →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-preview">
+            <div class="preview-code">
+              <span class="keyword">testBlaze</span> -> ECommerceSuite<br>
+              <span class="highlight">Selenium + RestAssured + JMeter</span><br>
+              <span class="string">-30% Defects</span>
+            </div>
+          </div>
+          <div class="project-inner">
+            <div class="project-header">
+              <h3>Test Blaze — E-Commerce QA Suite</h3>
+              <span class="project-badge badge-amber">-30% DEFECTS</span>
+            </div>
+            <p class="project-desc">UI and API test coverage for an e-commerce application's core modules. Combined Selenium and RestAssured for functional coverage, Postman for backend contract checks, and JMeter for load testing under high traffic.</p>
+            <div class="project-stack">Selenium · RestAssured · Postman · JMeter · TestRail</div>
+            <div class="project-links">
+              <span style="font-family:var(--mono); font-size:12px; color:var(--muted);">Client project</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-preview">
+            <div class="preview-code">
+              <span class="keyword">testSuite</span> -> OrangeHRM<br>
+              <span class="highlight">BDD SpecFlow &amp; C#</span><br>
+              <span class="string">+30% Efficiency</span>
+            </div>
+          </div>
+          <div class="project-inner">
+            <div class="project-header">
+              <h3>OrangeHRM QA Framework</h3>
+              <span class="project-badge badge-amber">+30% EFFICIENCY</span>
+            </div>
+            <p class="project-desc">End-to-end QA framework for hardware/software integration testing against the OrangeHRM platform. Test documentation in Gherkin, defect tracking and reporting across modules.</p>
+            <div class="project-stack">C# · SpecFlow · .NET · BDD</div>
+            <div class="project-links">
+              <span style="font-family:var(--mono); font-size:12px; color:var(--muted);">Coursework project</span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -586,7 +643,7 @@
   <section id="education">
     <div class="wrap">
       <div class="section-head"><span class="tag">05</span><h2>Education</h2></div>
-      <div class="edu">
+      <div class="edu-list">
         <div class="edu-item">
           <div class="when">2024 – Present</div>
           <div>
@@ -611,10 +668,9 @@
     <h2>Get in touch</h2>
     <p class="lead">Open to Werkstudent and full-time roles in QA automation or software development, based in or around Fulda.</p>
     <div class="contact-grid">
-      <a href="mailto:hmmd97@gmail.com">hmmd97@gmail.com</a>
-      <span>+49 152 182 62190</span>
-      <a href="https://github.com/HammadAsif-997" target="_blank" rel="noopener">github.com/HammadAsif-997</a>
-      <a href="https://linkedin.com/in/hammad-asif-26466a91" target="_blank" rel="noopener">linkedin.com/in/hammad-asif-26466a91</a>
+      <a class="contact-card" href="mailto:hmmd97@gmail.com">📧 hmmd97@gmail.com</a>
+      <a class="contact-card" href="https://github.com/HammadAsif-997" target="_blank" rel="noopener">💻 github.com/HammadAsif-997</a>
+      <a class="contact-card" href="https://linkedin.com/in/hammad-asif-26466a91" target="_blank" rel="noopener">🔗 linkedin.com/in/hammad-asif-26466a91</a>
     </div>
     <div class="foot-note">© 2026 Hammad Asif · Fulda, Germany</div>
   </div>
