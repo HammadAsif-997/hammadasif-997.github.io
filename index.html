@@ -47,7 +47,7 @@
 
   /* ---------- Header ---------- */
   header.site {
-    padding: 20px 0;
+    padding: 16px 0;
     border-bottom: 1px solid var(--line);
     position: sticky; top: 0; z-index: 100;
     background: rgba(11, 15, 14, 0.85);
@@ -56,14 +56,30 @@
   header.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
   .brand { font-family: var(--mono); font-weight: 700; font-size: 16px; letter-spacing: -0.5px; }
   .brand .dot { color: var(--pass); }
-  nav.top { display: flex; gap: 24px; font-size: 14px; font-weight: 500; }
+  
+  .header-right { display: flex; align-items: center; gap: 24px; }
+  nav.top { display: flex; gap: 20px; font-size: 14px; font-weight: 500; }
   nav.top a { color: var(--muted); transition: color .2s ease; }
   nav.top a:hover { color: var(--pass); }
-  @media (max-width: 640px) { nav.top { display: none; } }
+  @media (max-width: 768px) { nav.top { display: none; } }
+
+  /* Language Switcher */
+  .lang-switch {
+    display: flex; background: var(--surface); border: 1px solid var(--line);
+    border-radius: 6px; overflow: hidden; padding: 2px;
+  }
+  .lang-btn {
+    background: transparent; border: none; color: var(--muted);
+    font-family: var(--mono); font-size: 11px; font-weight: 700;
+    padding: 4px 10px; cursor: pointer; border-radius: 4px;
+    transition: all .2s ease;
+  }
+  .lang-btn.active { background: var(--pass); color: #000; }
+  .lang-btn:hover:not(.active) { color: var(--ink); }
 
   /* ---------- Hero ---------- */
   .hero { padding: 80px 0 60px; }
-  .hero-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; align-items: center; }
+  .hero-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; align-items: center; }
   @media (max-width: 800px) { .hero-grid { grid-template-columns: 1fr; gap: 32px; } }
 
   .status-badge {
@@ -87,13 +103,13 @@
   }
 
   h1.name {
-    font-size: clamp(38px, 5vw, 56px);
+    font-size: clamp(38px, 5vw, 52px);
     line-height: 1.05; margin: 0 0 12px; font-weight: 800;
     letter-spacing: -1.5px;
     background: linear-gradient(135deg, #fff 30%, var(--muted));
     -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   }
-  .role { font-size: clamp(18px, 2.5vw, 22px); color: var(--pass); margin: 0 0 20px; font-weight: 600; }
+  .role { font-size: clamp(17px, 2.3vw, 21px); color: var(--pass); margin: 0 0 20px; font-weight: 600; }
   .pitch { max-width: 52ch; margin: 0 0 28px; font-size: 16px; color: var(--muted); }
   
   .links { display: flex; flex-wrap: wrap; gap: 12px; }
@@ -108,6 +124,30 @@
   .links a.primary:hover { background: #0ea5e9; border-color: #0ea5e9; transform: translateY(-2px); }
   .links a:not(.primary):hover { border-color: var(--pass); color: var(--pass); transform: translateY(-2px); }
 
+  /* Profile Picture & Environment Card Column */
+  .hero-right { display: flex; flex-direction: column; gap: 20px; }
+  
+  .profile-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  }
+  .profile-img-wrap {
+    width: 80px; height: 80px; border-radius: 10px; overflow: hidden;
+    flex-shrink: 0; border: 1px solid var(--pass);
+    background: #000;
+  }
+  .profile-img-wrap img {
+    width: 100%; height: 100%; object-fit: cover;
+  }
+  .profile-info h3 { margin: 0 0 4px; font-size: 16px; font-weight: 700; }
+  .profile-info p { margin: 0; font-size: 13px; color: var(--muted); font-family: var(--mono); }
+
   /* Environment Code Card */
   .env-card {
     background: var(--surface);
@@ -119,7 +159,7 @@
   .env-head {
     font-family: var(--mono); font-size: 11px; letter-spacing: 1px; text-transform: uppercase;
     color: var(--muted); background: rgba(0,0,0,0.3);
-    padding: 12px 18px; border-bottom: 1px solid var(--line);
+    padding: 10px 16px; border-bottom: 1px solid var(--line);
     display: flex; align-items: center; justify-content: space-between;
   }
   .env-dots { display: flex; gap: 6px; }
@@ -128,11 +168,11 @@
   .env-dots span:nth-child(2) { background: #f59e0b; }
   .env-dots span:nth-child(3) { background: #10b981; }
 
-  .env-card dl { margin: 0; padding: 16px 20px; }
-  .env-card .row { display: flex; justify-content: space-between; gap: 12px; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.03); font-size: 14px; }
+  .env-card dl { margin: 0; padding: 12px 16px; }
+  .env-card .row { display: flex; justify-content: space-between; gap: 12px; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.03); font-size: 13.5px; }
   .env-card .row:last-child { border-bottom: none; }
   .env-card dt { color: var(--muted); }
-  .env-card dd { margin: 0; font-family: var(--mono); font-size: 13px; color: var(--ink); text-align: right; }
+  .env-card dd { margin: 0; font-family: var(--mono); font-size: 12.5px; color: var(--ink); text-align: right; }
 
   /* ---------- Sections ---------- */
   section { padding: 64px 0; border-top: 1px solid var(--line); }
@@ -259,14 +299,20 @@
 <header class="site">
   <div class="wrap">
     <div class="brand">hammad<span class="dot">.</span>asif</div>
-    <nav class="top">
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#education">Education</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <div class="header-right">
+      <nav class="top">
+        <a href="#about" data-i18n="nav_about">About</a>
+        <a href="#skills" data-i18n="nav_skills">Skills</a>
+        <a href="#experience" data-i18n="nav_experience">Experience</a>
+        <a href="#projects" data-i18n="nav_projects">Projects</a>
+        <a href="#education" data-i18n="nav_education">Education</a>
+        <a href="#contact" data-i18n="nav_contact">Contact</a>
+      </nav>
+      <div class="lang-switch">
+        <button class="lang-btn active" onclick="setLanguage('en')">EN</button>
+        <button class="lang-btn" onclick="setLanguage('de')">DE</button>
+      </div>
+    </div>
   </div>
 </header>
 
@@ -276,38 +322,52 @@
       <div>
         <div class="status-badge">
           <span class="pulse"></span>
-          OPEN TO WORK · WERKSTUDENT / FULL-TIME
+          <span data-i18n="status_badge">OPEN TO WORK · WERKSTUDENT / FULL-TIME</span>
         </div>
         <h1 class="name">Hammad Asif</h1>
-        <p class="role">Software Developer & QA Automation Engineer</p>
-        <p class="pitch">I build automated test suites and web applications, and I like finding the bug before the user does. Currently completing a Master's in Global Software Development at Fulda University of Applied Sciences.</p>
+        <p class="role" data-i18n="hero_role">Software Developer & QA Automation Engineer</p>
+        <p class="pitch" data-i18n="hero_pitch">I build automated test suites and web applications, and I like finding the bug before the user does. Currently completing a Master's in Global Software Development at Fulda University of Applied Sciences.</p>
         <div class="links">
-          <a class="primary" href="mailto:hmmd97@gmail.com">Email me</a>
+          <a class="primary" href="mailto:hmmd97@gmail.com" data-i18n="btn_email">Email me</a>
           <a href="https://github.com/HammadAsif-997" target="_blank" rel="noopener">GitHub</a>
           <a href="https://linkedin.com/in/hammad-asif-26466a91" target="_blank" rel="noopener">LinkedIn</a>
         </div>
       </div>
 
-      <div class="env-card">
-        <div class="env-head">
-          <span>ENVIRONMENT</span>
-          <div class="env-dots"><span></span><span></span><span></span></div>
+      <div class="hero-right">
+        <!-- Profile Picture Card -->
+        <div class="profile-card">
+          <div class="profile-img-wrap">
+            <!-- Replace src with your actual image path or photo URL -->
+            <img src="https://www.mediafire.com/view/ftcv7q8627wymwl?auto=format&fit=crop&q=80&w=300" alt="Hammad Asif">
+          </div>
+          <div class="profile-info">
+            <h3>Hammad Asif</h3>
+            <p>Fulda, Germany</p>
+          </div>
         </div>
-        <dl>
-          <div class="row"><dt>Location</dt><dd>Fulda, Germany</dd></div>
-          <div class="row"><dt>Status</dt><dd><span style="color: var(--pass)">OPEN TO WORK</span></dd></div>
-          <div class="row"><dt>Seeking</dt><dd>Werkstudent / Vollzeit</dd></div>
-          <div class="row"><dt>Notice</dt><dd>Immediate</dd></div>
-          <div class="row"><dt>Languages</dt><dd>English (C1) · German (B1)</dd></div>
-        </dl>
+
+        <div class="env-card">
+          <div class="env-head">
+            <span data-i18n="env_title">ENVIRONMENT</span>
+            <div class="env-dots"><span></span><span></span><span></span></div>
+          </div>
+          <dl>
+            <div class="row"><dt data-i18n="env_loc_lbl">Location</dt><dd data-i18n="env_loc_val">Fulda, Germany</dd></div>
+            <div class="row"><dt data-i18n="env_stat_lbl">Status</dt><dd><span style="color: var(--pass)" data-i18n="env_stat_val">OPEN TO WORK</span></dd></div>
+            <div class="row"><dt data-i18n="env_seek_lbl">Seeking</dt><dd data-i18n="env_seek_val">Werkstudent / Vollzeit</dd></div>
+            <div class="row"><dt data-i18n="env_not_lbl">Notice</dt><dd data-i18n="env_not_val">Immediate</dd></div>
+            <div class="row"><dt data-i18n="env_lang_lbl">Languages</dt><dd data-i18n="env_lang_val">English (C1) · German (B1)</dd></div>
+          </dl>
+        </div>
       </div>
     </div>
   </section>
 
   <section id="about">
     <div class="wrap">
-      <div class="section-head"><span class="tag">01</span><h2>About</h2></div>
-      <div class="about-text">
+      <div class="section-head"><span class="tag">01</span><h2 data-i18n="sec_about">About</h2></div>
+      <div class="about-text" data-i18n-html="about_content">
         <p>I'm a Master's student in Global Software Development at Fulda University of Applied Sciences, and I work both sides of the same problem: <strong>making software and breaking it on purpose</strong>.</p>
         <p>On the QA side, that's UI automation with <strong>Selenium</strong>, <strong>Playwright</strong> and <strong>Cypress</strong>, API testing with <strong>RestAssured</strong> and <strong>Postman</strong>, and load testing with <strong>JMeter</strong> — the different ways an application quietly fails before a user finds it first. On the development side, I build the applications themselves: <strong>React</strong> front ends, <strong>Node.js</strong> and <strong>Spring Boot</strong> back ends, and the occasional Python script that saves an afternoon of manual work.</p>
         <p>Looking for a <strong>Werkstudent</strong> role or <strong>full-time</strong> position in software development or QA automation — or ideally, one that uses both.</p>
@@ -317,10 +377,10 @@
 
   <section id="skills">
     <div class="wrap">
-      <div class="section-head"><span class="tag">02</span><h2>Skills</h2></div>
+      <div class="section-head"><span class="tag">02</span><h2 data-i18n="sec_skills">Skills</h2></div>
       <div class="skills-grid">
         <div class="skill-card">
-          <h3>Languages</h3>
+          <h3 data-i18n="skill_lang">Languages</h3>
           <div class="chip-row">
             <span class="chip"><span>✓</span>JavaScript</span>
             <span class="chip"><span>✓</span>TypeScript</span>
@@ -331,7 +391,7 @@
           </div>
         </div>
         <div class="skill-card">
-          <h3>Frontend</h3>
+          <h3 data-i18n="skill_fe">Frontend</h3>
           <div class="chip-row">
             <span class="chip"><span>✓</span>React.js</span>
             <span class="chip"><span>✓</span>Next.js</span>
@@ -340,7 +400,7 @@
           </div>
         </div>
         <div class="skill-card">
-          <h3>Backend</h3>
+          <h3 data-i18n="skill_be">Backend</h3>
           <div class="chip-row">
             <span class="chip"><span>✓</span>Node.js</span>
             <span class="chip"><span>✓</span>Express.js</span>
@@ -354,7 +414,7 @@
           </div>
         </div>
         <div class="skill-card">
-          <h3>Test automation</h3>
+          <h3 data-i18n="skill_qa">Test automation</h3>
           <div class="chip-row">
             <span class="chip"><span>✓</span>Selenium</span>
             <span class="chip"><span>✓</span>Playwright</span>
@@ -366,7 +426,7 @@
           </div>
         </div>
         <div class="skill-card">
-          <h3>Cloud &amp; tools</h3>
+          <h3 data-i18n="skill_cloud">Cloud &amp; tools</h3>
           <div class="chip-row">
             <span class="chip"><span>✓</span>AWS (EC2/S3)</span>
             <span class="chip"><span>✓</span>GitHub Actions</span>
@@ -377,7 +437,7 @@
           </div>
         </div>
         <div class="skill-card">
-          <h3>Data &amp; ML (applied)</h3>
+          <h3 data-i18n="skill_data">Data &amp; ML (applied)</h3>
           <div class="chip-row">
             <span class="chip"><span>✓</span>Python</span>
             <span class="chip"><span>✓</span>pandas</span>
@@ -385,7 +445,7 @@
           </div>
         </div>
         <div class="skill-card">
-          <h3>Architecture</h3>
+          <h3 data-i18n="skill_arch">Architecture</h3>
           <div class="chip-row">
             <span class="chip"><span>✓</span>RESTful APIs</span>
             <span class="chip"><span>✓</span>Clean Architecture</span>
@@ -399,14 +459,14 @@
 
   <section id="experience">
     <div class="wrap">
-      <div class="section-head"><span class="tag">03</span><h2>Experience</h2></div>
+      <div class="section-head"><span class="tag">03</span><h2 data-i18n="sec_experience">Experience</h2></div>
 
       <div class="tc">
         <div class="tc-title">
-          <h3>Software QA Engineer &amp; Developer — VentureDive</h3>
+          <h3 data-i18n="exp_1_title">Software QA Engineer &amp; Developer — VentureDive</h3>
           <span class="tc-meta">Jan 2023 – Sep 2024</span>
         </div>
-        <div class="tc-body">
+        <div class="tc-body" data-i18n-html="exp_1_body">
           <ul>
             <li>Combined QA and development role across AI-based and FinTech client products.</li>
             <li>Contributed to feature development early on — REST API endpoints and data-processing logic — before the role shifted mostly to QA and test automation.</li>
@@ -421,10 +481,10 @@
 
       <div class="tc">
         <div class="tc-title">
-          <h3>Junior Developer &amp; Quality Control — Etech Maestro</h3>
+          <h3 data-i18n="exp_2_title">Junior Developer &amp; Quality Control — Etech Maestro</h3>
           <span class="tc-meta">Jul 2017 – Jul 2019</span>
         </div>
-        <div class="tc-body">
+        <div class="tc-body" data-i18n-html="exp_2_body">
           <ul>
             <li>Worked on a nationwide cinema and event ticket-booking platform — fixed bugs and built minor features across the booking flow, admin backoffice and ticket/notification management, under senior developers.</li>
             <li>Built and maintained a separate ticketing system for PortGrand, a Karachi entertainment and dining venue, to support online ticket sales.</li>
@@ -437,10 +497,10 @@
 
       <div class="tc">
         <div class="tc-title">
-          <h3>Software Developer — Etech Maestro (Internship)</h3>
+          <h3 data-i18n="exp_3_title">Software Developer — Etech Maestro (Internship)</h3>
           <span class="tc-meta">Jan 2017 – Jul 2017</span>
         </div>
-        <div class="tc-body">
+        <div class="tc-body" data-i18n-html="exp_3_body">
           <ul>
             <li>Entry-level internship — learned the company's development workflow, coding practices and team communication.</li>
           </ul>
@@ -452,9 +512,9 @@
 
   <section id="projects">
     <div class="wrap">
-      <div class="section-head"><span class="tag">04</span><h2>Projects</h2></div>
+      <div class="section-head"><span class="tag">04</span><h2 data-i18n="sec_projects">Projects</h2></div>
 
-      <div class="project-group-label"><span class="sw dev"></span>DEVELOPMENT</div>
+      <div class="project-group-label"><span class="sw dev"></span><span data-i18n="proj_cat_dev">DEVELOPMENT</span></div>
       <div class="projects-grid">
 
         <div class="project-card">
@@ -468,13 +528,13 @@
           </div>
           <div class="project-inner">
             <div class="project-header">
-              <h3>Swoplet — Fulda University Marketplace</h3>
-              <span class="project-badge badge-amber">TEAM LEAD</span>
+              <h3 data-i18n="p1_title">Swoplet — Fulda University Marketplace</h3>
+              <span class="project-badge badge-amber" data-i18n="badge_lead">TEAM LEAD</span>
             </div>
-            <p class="project-desc">A marketplace for Fulda University students to swap items and chat in real time. Led a 5-person team, built real-time chat and search across the full stack, plus a price-prediction feature using an ML model estimating fair resale price. Also owned QA for the platform before releases.</p>
+            <p class="project-desc" data-i18n="p1_desc">A marketplace for Fulda University students to swap items and chat in real time. Led a 5-person team, built real-time chat and search across the full stack, plus a price-prediction feature using an ML model estimating fair resale price. Also owned QA for the platform before releases.</p>
             <div class="project-stack">React.js · Express.js · MySQL · Socket.io · Python/scikit-learn · Flask · AWS</div>
             <div class="project-links">
-              <a href="https://github.com/HammadAsif-997/Swoplet" target="_blank" rel="noopener">Repository →</a>
+              <a href="https://github.com/HammadAsif-997/Swoplet" target="_blank" rel="noopener"><span data-i18n="link_repo">Repository</span> →</a>
             </div>
           </div>
         </div>
@@ -490,13 +550,13 @@
           </div>
           <div class="project-inner">
             <div class="project-header">
-              <h3>SaaS-Based Webshop — Spring Boot &amp; Svelte</h3>
+              <h3 data-i18n="p2_title">SaaS-Based Webshop — Spring Boot &amp; Svelte</h3>
               <span class="project-badge badge-cyan">PASS</span>
             </div>
-            <p class="project-desc">REST APIs in Spring Boot for authentication, products, cart and orders with server-side validation, plus a Svelte frontend with pagination and unified error handling. Also demonstrates the Facade/Adapter patterns and live reviews over WebSocket.</p>
+            <p class="project-desc" data-i18n="p2_desc">REST APIs in Spring Boot for authentication, products, cart and orders with server-side validation, plus a Svelte frontend with pagination and unified error handling. Also demonstrates the Facade/Adapter patterns and live reviews over WebSocket.</p>
             <div class="project-stack">Java 17 · Spring Boot · Svelte · WebSocket/STOMP · JPA/H2</div>
             <div class="project-links">
-              <a href="https://github.com/HammadAsif-997/Distributed-Application-Spring-Boot-Java" target="_blank" rel="noopener">Repository →</a>
+              <a href="https://github.com/HammadAsif-997/Distributed-Application-Spring-Boot-Java" target="_blank" rel="noopener"><span data-i18n="link_repo">Repository</span> →</a>
             </div>
           </div>
         </div>
@@ -512,20 +572,20 @@
           </div>
           <div class="project-inner">
             <div class="project-header">
-              <h3>Pharmaceutical Inventory Management System</h3>
-              <span class="project-badge badge-amber">CLIENT PROJECT</span>
+              <h3 data-i18n="p3_title">Pharmaceutical Inventory Management System</h3>
+              <span class="project-badge badge-amber" data-i18n="badge_client">CLIENT PROJECT</span>
             </div>
-            <p class="project-desc">A full inventory management system for a pharmaceutical company — stock tracking, supplier management, user roles/permissions, real-time stock updates, invoicing and reporting.</p>
+            <p class="project-desc" data-i18n="p3_desc">A full inventory management system for a pharmaceutical company — stock tracking, supplier management, user roles/permissions, real-time stock updates, invoicing and reporting.</p>
             <div class="project-stack">CodeIgniter (PHP) · MySQL</div>
             <div class="project-links">
-              <span style="font-family:var(--mono); font-size:12px; color:var(--muted);">Client project</span>
+              <span style="font-family:var(--mono); font-size:12px; color:var(--muted);" data-i18n="link_client">Client project</span>
             </div>
           </div>
         </div>
 
       </div>
 
-      <div class="project-group-label" style="margin-top: 48px;"><span class="sw qa"></span>QA &amp; TEST AUTOMATION</div>
+      <div class="project-group-label" style="margin-top: 48px;"><span class="sw qa"></span><span data-i18n="proj_cat_qa">QA &amp; TEST AUTOMATION</span></div>
       <div class="projects-grid">
 
         <div class="project-card">
@@ -538,14 +598,14 @@
           </div>
           <div class="project-inner">
             <div class="project-header">
-              <h3>Advanced REST API Test Framework</h3>
-              <span class="project-badge badge-pass">13 TESTS · PASS</span>
+              <h3 data-i18n="p4_title">Advanced REST API Test Framework</h3>
+              <span class="project-badge badge-pass" data-i18n="badge_13tests">13 TESTS · PASS</span>
             </div>
-            <p class="project-desc">Data-driven API testing framework covering full CRUD, JSON Schema validation and response comparison against saved baselines, with automatic Extent Report generation on every run.</p>
+            <p class="project-desc" data-i18n="p4_desc">Data-driven API testing framework covering full CRUD, JSON Schema validation and response comparison against saved baselines, with automatic Extent Report generation on every run.</p>
             <div class="project-stack">RestAssured · Java · TestNG · Extent Reports · Faker</div>
             <div class="project-links">
-              <a href="https://github.com/HammadAsif-997/RestAssuredApiTesting" target="_blank" rel="noopener">Repository →</a>
-              <a href="https://hammadasif-997.github.io/RestAssuredApiTesting/reports/Test-Report-2024.08.29.20.46.04.html" target="_blank" rel="noopener">Test report →</a>
+              <a href="https://github.com/HammadAsif-997/RestAssuredApiTesting" target="_blank" rel="noopener"><span data-i18n="link_repo">Repository</span> →</a>
+              <a href="https://hammadasif-997.github.io/RestAssuredApiTesting/reports/Test-Report-2024.08.29.20.46.04.html" target="_blank" rel="noopener"><span data-i18n="link_report">Test report</span> →</a>
             </div>
           </div>
         </div>
@@ -560,14 +620,14 @@
           </div>
           <div class="project-inner">
             <div class="project-header">
-              <h3>Selenium UI Automation Framework</h3>
-              <span class="project-badge badge-pass">9 SCENARIOS · PASS</span>
+              <h3 data-i18n="p5_title">Selenium UI Automation Framework</h3>
+              <span class="project-badge badge-pass" data-i18n="badge_9tests">9 SCENARIOS · PASS</span>
             </div>
-            <p class="project-desc">End-to-end UI test suite covering login, sorting, cart and multi-currency checkout flows across two e-commerce sites, built with the Page Object Model.</p>
+            <p class="project-desc" data-i18n="p5_desc">End-to-end UI test suite covering login, sorting, cart and multi-currency checkout flows across two e-commerce sites, built with the Page Object Model.</p>
             <div class="project-stack">Selenium · Java · TestNG · Maven · POM</div>
             <div class="project-links">
-              <a href="https://github.com/HammadAsif-997/SeleniumProjectWith-Bdd-Pom-Java" target="_blank" rel="noopener">Repository →</a>
-              <a href="https://hammadasif-997.github.io/SeleniumProjectWith-Bdd-Pom-Java/reports/Test-Report-2024.08.29.23.26.02.html" target="_blank" rel="noopener">Test report →</a>
+              <a href="https://github.com/HammadAsif-997/SeleniumProjectWith-Bdd-Pom-Java" target="_blank" rel="noopener"><span data-i18n="link_repo">Repository</span> →</a>
+              <a href="https://hammadasif-997.github.io/SeleniumProjectWith-Bdd-Pom-Java/reports/Test-Report-2024.08.29.23.26.02.html" target="_blank" rel="noopener"><span data-i18n="link_report">Test report</span> →</a>
             </div>
           </div>
         </div>
@@ -582,13 +642,13 @@
           </div>
           <div class="project-inner">
             <div class="project-header">
-              <h3>Test Blaze — E-Commerce QA Suite</h3>
+              <h3 data-i18n="p7_title">Test Blaze — E-Commerce QA Suite</h3>
               <span class="project-badge badge-amber">-30% DEFECTS</span>
             </div>
-            <p class="project-desc">UI and API test coverage for an e-commerce application's core modules. Combined Selenium and RestAssured for functional coverage, Postman for backend contract checks, and JMeter for load testing under high traffic.</p>
+            <p class="project-desc" data-i18n="p7_desc">UI and API test coverage for an e-commerce application's core modules. Combined Selenium and RestAssured for functional coverage, Postman for backend contract checks, and JMeter for load testing under high traffic.</p>
             <div class="project-stack">Selenium · RestAssured · Postman · JMeter · TestRail</div>
             <div class="project-links">
-              <span style="font-family:var(--mono); font-size:12px; color:var(--muted);">Client project</span>
+              <span style="font-family:var(--mono); font-size:12px; color:var(--muted);" data-i18n="link_client">Client project</span>
             </div>
           </div>
         </div>
@@ -603,13 +663,13 @@
           </div>
           <div class="project-inner">
             <div class="project-header">
-              <h3>OrangeHRM QA Framework</h3>
+              <h3 data-i18n="p8_title">OrangeHRM QA Framework</h3>
               <span class="project-badge badge-amber">+30% EFFICIENCY</span>
             </div>
-            <p class="project-desc">End-to-end QA framework for hardware/software integration testing against the OrangeHRM platform. Test documentation in Gherkin, defect tracking and reporting across modules.</p>
+            <p class="project-desc" data-i18n="p8_desc">End-to-end QA framework for hardware/software integration testing against the OrangeHRM platform. Test documentation in Gherkin, defect tracking and reporting across modules.</p>
             <div class="project-stack">C# · SpecFlow · .NET · BDD</div>
             <div class="project-links">
-              <span style="font-family:var(--mono); font-size:12px; color:var(--muted);">Coursework project</span>
+              <span style="font-family:var(--mono); font-size:12px; color:var(--muted);" data-i18n="link_course">Coursework project</span>
             </div>
           </div>
         </div>
@@ -620,20 +680,20 @@
 
   <section id="education">
     <div class="wrap">
-      <div class="section-head"><span class="tag">05</span><h2>Education</h2></div>
+      <div class="section-head"><span class="tag">05</span><h2 data-i18n="sec_education">Education</h2></div>
       <div class="edu-list">
         <div class="edu-item">
           <div class="when">2024 – Present</div>
           <div>
-            <h3>MSc Global Software Development</h3>
-            <div class="where">Fulda University of Applied Sciences, Germany</div>
+            <h3 data-i18n="edu_1_title">MSc Global Software Development</h3>
+            <div class="where" data-i18n="edu_1_where">Fulda University of Applied Sciences, Germany</div>
           </div>
         </div>
         <div class="edu-item">
           <div class="when">2019 – 2023</div>
           <div>
-            <h3>BSc Computer Science</h3>
-            <div class="where">Muhammad Ali Jinnah University, Pakistan</div>
+            <h3 data-i18n="edu_2_title">BSc Computer Science</h3>
+            <div class="where" data-i18n="edu_2_where">Muhammad Ali Jinnah University, Pakistan</div>
           </div>
         </div>
       </div>
@@ -643,16 +703,193 @@
 
 <footer id="contact">
   <div class="wrap">
-    <h2>Get in touch</h2>
-    <p class="lead">Open to Werkstudent and full-time roles in QA automation or software development, based in or around Fulda.</p>
+    <h2 data-i18n="foot_title">Get in touch</h2>
+    <p class="lead" data-i18n="foot_lead">Open to Werkstudent and full-time roles in QA automation or software development, based in or around Fulda.</p>
     <div class="contact-grid">
       <a class="contact-card" href="mailto:hmmd97@gmail.com">📧 hmmd97@gmail.com</a>
       <a class="contact-card" href="https://github.com/HammadAsif-997" target="_blank" rel="noopener">💻 github.com/HammadAsif-997</a>
       <a class="contact-card" href="https://linkedin.com/in/hammad-asif-26466a91" target="_blank" rel="noopener">🔗 linkedin.com/in/hammad-asif-26466a91</a>
     </div>
-    <div class="foot-note">© 2026 Hammad Asif · Fulda, Germany</div>
+    <div class="foot-note" data-i18n="foot_copy">© 2026 Hammad Asif · Fulda, Germany</div>
   </div>
 </footer>
+
+<script>
+  const translations = {
+    en: {
+      nav_about: "About",
+      nav_skills: "Skills",
+      nav_experience: "Experience",
+      nav_projects: "Projects",
+      nav_education: "Education",
+      nav_contact: "Contact",
+      status_badge: "OPEN TO WORK · WERKSTUDENT / FULL-TIME",
+      hero_role: "Software Developer & QA Automation Engineer",
+      hero_pitch: "I build automated test suites and web applications, and I like finding the bug before the user does. Currently completing a Master's in Global Software Development at Fulda University of Applied Sciences.",
+      btn_email: "Email me",
+      env_title: "ENVIRONMENT",
+      env_loc_lbl: "Location",
+      env_loc_val: "Fulda, Germany",
+      env_stat_lbl: "Status",
+      env_stat_val: "OPEN TO WORK",
+      env_seek_lbl: "Seeking",
+      env_seek_val: "Werkstudent / Vollzeit",
+      env_not_lbl: "Notice",
+      env_not_val: "Immediate",
+      env_lang_lbl: "Languages",
+      env_lang_val: "English (C1) · German (B1)",
+      sec_about: "About",
+      about_content: `<p>I'm a Master's student in Global Software Development at Fulda University of Applied Sciences, and I work both sides of the same problem: <strong>making software and breaking it on purpose</strong>.</p><p>On the QA side, that's UI automation with <strong>Selenium</strong>, <strong>Playwright</strong> and <strong>Cypress</strong>, API testing with <strong>RestAssured</strong> and <strong>Postman</strong>, and load testing with <strong>JMeter</strong> — the different ways an application quietly fails before a user finds it first. On the development side, I build the applications themselves: <strong>React</strong> front ends, <strong>Node.js</strong> and <strong>Spring Boot</strong> back ends, and the occasional Python script that saves an afternoon of manual work.</p><p>Looking for a <strong>Werkstudent</strong> role or <strong>full-time</strong> position in software development or QA automation — or ideally, one that uses both.</p>`,
+      sec_skills: "Skills",
+      skill_lang: "Languages",
+      skill_fe: "Frontend",
+      skill_be: "Backend",
+      skill_qa: "Test automation",
+      skill_cloud: "Cloud & tools",
+      skill_data: "Data & ML (applied)",
+      skill_arch: "Architecture",
+      sec_experience: "Experience",
+      exp_1_title: "Software QA Engineer & Developer — VentureDive",
+      exp_1_body: `<ul><li>Combined QA and development role across AI-based and FinTech client products.</li><li>Contributed to feature development early on — REST API endpoints and data-processing logic — before the role shifted mostly to QA and test automation.</li><li>Automated 80% of API tests with RestAssured (Java) and Postman (JavaScript); wired automated suites into CI/CD via Jenkins, versioned through GitHub.</li><li>Built automated UI test suites with Selenium (C#), Playwright and Cypress, cutting manual testing effort by 50%.</li><li>Ran load and performance tests with JMeter to surface bottlenecks under peak traffic.</li><li>Worked cross-functionally with development teams in an Agile/Scrum environment.</li></ul><div class="tc-stack">RestAssured · Postman · Selenium · Playwright · Cypress · JMeter · Jenkins · GitHub</div>`,
+      exp_2_title: "Junior Developer & Quality Control — Etech Maestro",
+      exp_2_body: `<ul><li>Worked on a nationwide cinema and event ticket-booking platform — fixed bugs and built minor features across the booking flow, admin backoffice and ticket/notification management, under senior developers.</li><li>Built and maintained a separate ticketing system for PortGrand, a Karachi entertainment and dining venue, to support online ticket sales.</li><li>Designed and built several WordPress sites — frontend design, JavaScript interactivity, PHP customization — for various client projects.</li><li>Took on quality control alongside development: manually testing bug fixes and new features before release and feeding issues back to the dev team.</li></ul><div class="tc-stack">Laravel (PHP) · React · JavaScript · MySQL · WordPress</div>`,
+      exp_3_title: "Software Developer — Etech Maestro (Internship)",
+      exp_3_body: `<ul><li>Entry-level internship — learned the company's development workflow, coding practices and team communication.</li></ul>`,
+      sec_projects: "Projects",
+      proj_cat_dev: "DEVELOPMENT",
+      proj_cat_qa: "QA & TEST AUTOMATION",
+      badge_lead: "TEAM LEAD",
+      badge_client: "CLIENT PROJECT",
+      badge_pass: "PASS",
+      badge_13tests: "13 TESTS · PASS",
+      badge_9tests: "9 SCENARIOS · PASS",
+      badge_5tests: "5 TESTS · PASS",
+      link_repo: "Repository",
+      link_report: "Test report",
+      link_client: "Client project",
+      link_course: "Coursework project",
+      p1_title: "Swoplet — Fulda University Marketplace",
+      p1_desc: "A marketplace for Fulda University students to swap items and chat in real time. Led a 5-person team, built real-time chat and search across the full stack, plus a price-prediction feature using an ML model estimating fair resale price. Also owned QA for the platform before releases.",
+      p2_title: "SaaS-Based Webshop — Spring Boot & Svelte",
+      p2_desc: "REST APIs in Spring Boot for authentication, products, cart and orders with server-side validation, plus a Svelte frontend with pagination and unified error handling. Also demonstrates the Facade/Adapter patterns and live reviews over WebSocket.",
+      p3_title: "Pharmaceutical Inventory Management System",
+      p3_desc: "A full inventory management system for a pharmaceutical company — stock tracking, supplier management, user roles/permissions, real-time stock updates, invoicing and reporting.",
+      p4_title: "Advanced REST API Test Framework",
+      p4_desc: "Data-driven API testing framework covering full CRUD, JSON Schema validation and response comparison against saved baselines, with automatic Extent Report generation on every run.",
+      p5_title: "Selenium UI Automation Framework",
+      p5_desc: "End-to-end UI test suite covering login, sorting, cart and multi-currency checkout flows across two e-commerce sites, built with the Page Object Model.",
+      p6_title: "REST API Test Suite — RestAssured",
+      p6_desc: "Full CRUD coverage over a public REST API — GET, POST, PUT, PATCH, DELETE — with Hamcrest assertions on status codes and response bodies.",
+      p7_title: "Test Blaze — E-Commerce QA Suite",
+      p7_desc: "UI and API test coverage for an e-commerce application's core modules. Combined Selenium and RestAssured for functional coverage, Postman for backend contract checks, and JMeter for load testing under high traffic.",
+      p8_title: "OrangeHRM QA Framework",
+      p8_desc: "End-to-end QA framework for hardware/software integration testing against the OrangeHRM platform. Test documentation in Gherkin, defect tracking and reporting across modules.",
+      sec_education: "Education",
+      edu_1_title: "MSc Global Software Development",
+      edu_1_where: "Fulda University of Applied Sciences, Germany",
+      edu_2_title: "BSc Computer Science",
+      edu_2_where: "Muhammad Ali Jinnah University, Pakistan",
+      foot_title: "Get in touch",
+      foot_lead: "Open to Werkstudent and full-time roles in QA automation or software development, based in or around Fulda.",
+      foot_copy: "© 2026 Hammad Asif · Fulda, Germany"
+    },
+    de: {
+      nav_about: "Über mich",
+      nav_skills: "Fähigkeiten",
+      nav_experience: "Erfahrung",
+      nav_projects: "Projekte",
+      nav_education: "Ausbildung",
+      nav_contact: "Kontakt",
+      status_badge: "SUCHE JOBS · WERKSTUDENT / VOLLZEIT",
+      hero_role: "Softwareentwickler & QA Automation Engineer",
+      hero_pitch: "Ich entwickle automatisierte Testsuites und Webanwendungen – und finde den Bug am liebsten, bevor es der Nutzer tut. Derzeit absolviere ich meinen Master in Global Software Development an der Hochschule Fulda.",
+      btn_email: "E-Mail schreiben",
+      env_title: "UMGEBUNG",
+      env_loc_lbl: "Standort",
+      env_loc_val: "Fulda, Deutschland",
+      env_stat_lbl: "Status",
+      env_stat_val: "SUCHE JOB",
+      env_seek_lbl: "Suche",
+      env_seek_val: "Werkstudent / Vollzeit",
+      env_not_lbl: "Kündigungsfr.",
+      env_not_val: "Sofort",
+      env_lang_lbl: "Sprachen",
+      env_lang_val: "Englisch (C1) · Deutsch (B1)",
+      sec_about: "Über mich",
+      about_content: `<p>Ich studiere im Master Global Software Development an der Hochschule Fulda und bewege mich in zwei Welten desselben Problems: <strong>Software entwickeln und sie gezielt auf die Probe stellen</strong>.</p><p>Im QA-Bereich umfasst das UI-Automatisierung mit <strong>Selenium</strong>, <strong>Playwright</strong> und <strong>Cypress</strong>, API-Tests mit <strong>RestAssured</strong> und <strong>Postman</strong> sowie Lasttests mit <strong>JMeter</strong>. In der Entwicklung baue ich Applikationen von Grund auf: <strong>React</strong>-Frontends, <strong>Node.js</strong>- und <strong>Spring Boot</strong>-Backends sowie Python-Skripte für Automatisierungen.</p><p>Ich suche eine Stelle als <strong>Werkstudent</strong> oder eine <strong>Festanstellung</strong> in der Softwareentwicklung oder QA-Automatisierung – oder idealerweise in einer Rolle, die beides verbindet.</p>`,
+      sec_skills: "Fähigkeiten",
+      skill_lang: "Sprachen",
+      skill_fe: "Frontend",
+      skill_be: "Backend",
+      skill_qa: "Testautomatisierung",
+      skill_cloud: "Cloud & Werkzeuge",
+      skill_data: "Daten & ML (angewandt)",
+      skill_arch: "Architektur",
+      sec_experience: "Berufserfahrung",
+      exp_1_title: "Software QA Engineer & Developer — VentureDive",
+      exp_1_body: `<ul><li>Kombinierte QA- und Entwicklungsrolle für KI-basierte und FinTech-Kundenprodukte.</li><li>Frühzeitige Mitwirkung an der Feature-Entwicklung (REST-API-Endpunkte und Datenverarbeitungslogik), bevor der Schwerpunkt zu QA und Testautomatisierung wechselte.</li><li>Automatisierung von 80% der API-Tests mit RestAssured (Java) und Postman (JavaScript); Integration in CI/CD über Jenkins, Versionierung mit GitHub.</li><li>Erstellung automatisierter UI-Testsuites mit Selenium (C#), Playwright und Cypress, wodurch der manuelle Testaufwand um 50% gesenkt wurde.</li><li>Durchführung von Last- und Performance-Tests mit JMeter zur Aufdeckung von Engpässen bei Spitzenlasten.</li><li>Funktionsübergreifende Zusammenarbeit mit Entwicklerteams in einer agilen Scrum-Umgebung.</li></ul><div class="tc-stack">RestAssured · Postman · Selenium · Playwright · Cypress · JMeter · Jenkins · GitHub</div>`,
+      exp_2_title: "Junior Developer & Quality Control — Etech Maestro",
+      exp_2_body: `<ul><li>Mitarbeit an einer bundesweiten Kino- und Event-Ticketplattform – Behebung von Bugs und Umsetzung kleinerer Features im Buchungsflow, Admin-Backoffice sowie Ticket- und Benachrichtigungsmanagement unter Anleitung von Senior-Entwicklern.</li><li>Entwicklung und Pflege eines separaten Ticketsystems für PortGrand (einen Event- und Gastronomiekomplex in Karachi) zur Unterstützung des Online-Ticketverkaufs.</li><li>Konzeption und Erstellung mehrerer WordPress-Websites (Frontend-Design, JavaScript-Interaktivität, PHP-Anpassungen) für verschiedene Kunden.</li><li>Übernahme der Qualitätskontrolle neben der Entwicklung: manuelle Tests von Bugfixes und neuen Funktionen vor dem Release.</li></ul><div class="tc-stack">Laravel (PHP) · React · JavaScript · MySQL · WordPress</div>`,
+      exp_3_title: "Software Developer — Etech Maestro (Praktikum)",
+      exp_3_body: `<ul><li>Einstiegspraktikum – Erlernen von Unternehmens-Workflows, Clean-Code-Praktiken und Teamkommunikation.</li></ul>`,
+      sec_projects: "Projekte",
+      proj_cat_dev: "ENTWICKLUNG",
+      proj_cat_qa: "QA & TESTAUTOMATISIERUNG",
+      badge_lead: "TEAMLEITUNG",
+      badge_client: "KUNDENPROJEKT",
+      badge_pass: "BESTANDEN",
+      badge_13tests: "13 TESTS · ERFOLGREICH",
+      badge_9tests: "9 SZENARIEN · ERFOLGREICH",
+      badge_5tests: "5 TESTS · ERFOLGREICH",
+      link_repo: "Repository",
+      link_report: "Testbericht",
+      link_client: "Kundenprojekt",
+      link_course: "Studienprojekt",
+      p1_title: "Swoplet — Fulda University Marketplace",
+      p1_desc: "Ein Marktplatz für Studierende der Hochschule Fulda zum Tauschen und Echtzeit-Chatten. Leitung eines 5-köpfigen Teams, Entwicklung von Echtzeit-Chat und Suche über den gesamten Stack sowie eine Preisvorhersage-Funktion mittels ML-Modell. Verantwortlich für die Plattform-QA vor Releases.",
+      p2_title: "SaaS-basierter Webshop — Spring Boot & Svelte",
+      p2_desc: "REST-APIs in Spring Boot für Authentifizierung, Produkte, Warenkorb und Bestellungen mit serverseitiger Validierung sowie ein Svelte-Frontend mit Paginierung und einheitlicher Fehlerbehandlung. Demonstriert zudem Facade/Adapter-Muster und Live-Bewertungen über WebSocket.",
+      p3_title: "Pharmazeutisches Bestandsverwaltungssystem",
+      p3_desc: "Ein umfassendes Bestandsverwaltungssystem für ein Pharmaunternehmen – Bestandsverfolgung, Lieferantenmanagement, Benutzerrollen/Berechtigungen, Echtzeit-Bestandsaktualisierungen, Rechnungsstellung und Berichte.",
+      p4_title: "Erweitertes REST-API-Testframework",
+      p4_desc: "Datengesteuertes API-Testframework für vollständiges CRUD, JSON-Schema-Validierung und Antwortvergleich gegen gespeicherte Baselines mit automatischer Extent-Report-Generierung bei jedem Durchlauf.",
+      p5_title: "Selenium UI-Automatisierungsframework",
+      p5_desc: "End-to-End-UI-Testsuite für Login-, Sortier-, Warenkorb- und Multiwährungs-Checkout-Abläufe über zwei E-Commerce-Websites hinweg, aufgebaut im Page Object Model.",
+      p6_title: "REST-API-Testsuite — RestAssured",
+      p6_desc: "Vollständige CRUD-Abdeckung einer öffentlichen REST-API (GET, POST, PUT, PATCH, DELETE) mit Hamcrest-Assertionen für Statuscodes und Antwortinhalte.",
+      p7_title: "Test Blaze — E-Commerce QA Suite",
+      p7_desc: "UI- und API-Testabdeckung für Kernmodule einer E-Commerce-Anwendung. Kombination aus Selenium und RestAssured für funktionale Abdeckung, Postman für Backend-Vertragsprüfungen und JMeter für Lasttests unter hoher Auslastung.",
+      p8_title: "OrangeHRM QA Framework",
+      p8_desc: "End-to-End-QA-Framework für Hard- und Software-Integrationsstests der OrangeHRM-Plattform. Testdokumentation in Gherkin, Fehlerverfolgung und Reporting über alle Module.",
+      sec_education: "Ausbildung",
+      edu_1_title: "MSc Global Software Development",
+      edu_1_where: "Hochschule Fulda, Deutschland",
+      edu_2_title: "BSc Computer Science",
+      edu_2_where: "Muhammad Ali Jinnah University, Pakistan",
+      foot_title: "Kontakt aufnehmen",
+      foot_lead: "Offen für Werkstudenten- und Vollzeitstellen in der QA-Automatisierung oder Softwareentwicklung in und um Fulda.",
+      foot_copy: "© 2026 Hammad Asif · Fulda, Deutschland"
+    }
+  };
+
+  function setLanguage(lang) {
+    document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+
+    const t = translations[lang];
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (t[key]) el.textContent = t[key];
+    });
+
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+      const key = el.getAttribute('data-i18n-html');
+      if (t[key]) el.innerHTML = t[key];
+    });
+
+    document.documentElement.lang = lang;
+  }
+</script>
 
 </body>
 </html>
